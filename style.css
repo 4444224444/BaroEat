@@ -48,12 +48,10 @@ body, html {
   justify-content: center;       /* 가로 가운데 정렬 */
   align-items: center;           /* 세로 가운데 정렬 */
   flex-direction: row;           /* 좌우 정렬 */
-  gap: 3rem;                     /* Main1과 Main2 사이 간격 */
   height: 100vh;                 /* 화면 전체 높이 */
-  padding: 0 4rem;
   box-sizing: border-box;
   background-color: #F4F8FB;
-  font-family: "Pretendard", sans-serif;
+  font-family: "Pretendard";
 }
 
 .Main1, .Main2 {
@@ -61,33 +59,181 @@ body, html {
 }
 
 .Main1 p {
-  font-size: 1.875rem;           /* 30px */
+  font-size: 15px;           /* 30px */
   text-align: left;
   margin-bottom: 1rem;
+  margin-left: 230px;
   width: 100%;
   max-width: 600px;
 }
 
 #MainLogo {
-  width: 200px;
+  width: 300px;
   display: block;
   margin: 0 auto;
 }
 
 #MainImg {
-  width: 400px;
+  width: 500px;
   display: block;
-  margin: 0 auto;
+  margin-bottom: 100px;
 }
 
-
+.Mp4 {
+  height: 100vh;
+  width: 100vw;
+}
 
 .Overview {
     background-color: #F4F8FB;
+    padding: 130px;
+    font-family: "Pretendard";
+}
+
+.Overview h1 {
+  text-align: center;
+  font-style: bold;
+  font-size: 40px;
+}
+
+.Overview span {
+  display: block;  
+  text-align: center;
+  font-size: 30px;
+  font-weight: 600px;
+  margin-top: 10px;
+}
+
+.OverviewFlex {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start; 
+  gap: 4rem;
+  padding: 6rem 4rem;
+}
+
+.TextGroup {
+  display: flex;
+  flex-direction: column; 
+  gap: 1rem;
+  max-width: 300px;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.OverviewImg img {
+  width: 300px;
+  height: auto;
+  display: block;
+}
+
+.OverviewTxt1 {
+  color: #01C38E;
+  font-size: 20px;
+}
+
+.OverviewTxt2 {
+  color: #1A1E29;
+  font-size: 20px;
+}
+
+.OverviewTxt3 {
+  color: #01C38E;
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+
+.OverviewTxt4 {
+  color: #1A1E29;
+  font-size: 20px;
+}
+
+#Video {
+  background-color: #F4F8FB;
 }
 
 .BackGroundResearch {
     background-color: #132D46;
+}
+
+.problem-box1 {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 2rem;
+  margin: 130px;
+}
+
+.txt-group1 .number {
+  color: white;
+}
+
+.txt-group1 .title {
+  color: #01C38E;
+  font-weight: 600px;
+}
+
+.txt-group1 .content {
+  color: white;
+}
+
+.txt-group2 .number {
+  color: white;
+}
+
+.txt-group2 .title {
+  color: #01C38E;
+  font-weight: 600px;
+}
+
+.txt-group2 .content {
+  color: white;
+}
+
+.txt-group1 {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  max-width: 50%;
+}
+
+.img-group1 {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.img-group1 img {
+  width: 180px; /* 이미지 크기 조절 */
+  height: auto;
+}
+
+.problem-box2 {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 0.1rem;
+
+}
+
+.txt-group2 {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  max-width: 50%;
+  margin-right: 150px;
+}
+
+.img-group2 {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.img-group2 img {
+  width: 500px; /* 이미지 크기 조절 */
+  height: auto;
+  margin-bottom: 150px;
 }
 
 .Presona, .UseFeedBack {
@@ -101,27 +247,27 @@ body, html {
 .UseFeedBack {
   overflow: hidden;
   position: relative;
-  height: 400px; /* 적절히 조절 가능 */
+  height: 400px; 
 }
 
 .UFB-container {
   position: absolute;
   top: 50px;
-  left: 100%; /* 오른쪽 바깥에서 시작 */
+  left: 100%; 
   display: flex;
   flex-direction: column;
-  gap: 30px; /* 줄 간 간격 */
+  gap: 30px; 
   animation: moveLeft 10s linear infinite;
 }
 
-/* 각 줄의 box 그룹 */
+
 .container1, .container2 {
   display: flex;
   gap: 20px;
 }
 
 .container2 {
-  margin-left: 50px; /* 약간 어긋나게 밀기 (자유 조절 가능) */
+  margin-left: 50px; 
 }
 
 .box {
@@ -136,13 +282,13 @@ body, html {
   font-size: 1.1rem;
 }
 
-/* 오른쪽에서 왼쪽으로 슬라이드 */
+
 @keyframes moveLeft {
   0% {
     transform: translateX(0);
   }
   100% {
-    transform: translateX(-1920px); /* 왼쪽으로 이동할 거리 (조절 가능) */
+    transform: translateX(-1920px); 
   }
 }
 
@@ -152,15 +298,15 @@ body, html {
   height: 600px;
 }
 
-/* 공통 박스 스타일 */
+
 .PJG-container div {
   width: 150px;
   height: 150px;
   background: #fffbe0;
   border: 2px solid #000;
   position: absolute;
-  transform: translateY(-200px); /* 위로 떠 있음 */
-  transition: transform 0.7s cubic-bezier(0.25, 1.8, 0.5, 1); /* 바운스 낙하 느낌 */
+  transform: translateY(-200px);
+  transition: transform 0.7s cubic-bezier(0.25, 1.8, 0.5, 1); 
   display: flex;
   justify-content: center;
   align-items: center;
@@ -168,12 +314,12 @@ body, html {
   font-size: 1.2rem;
 }
 
-/* 낙하 후 착지 */
+
 .PJG-container div.visible {
   transform: translateY(0);
 }
 
-/* staggered animation: 순차 낙하 */
+
 .box1 { top: 50px; left: 100px; transition-delay: 0s; }
 .box2 { top: 50px; left: 280px; transition-delay: 0.1s; }
 .box3 { top: 50px; left: 460px; transition-delay: 0.2s; }
