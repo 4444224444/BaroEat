@@ -1,57 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>BaroEat</title>
-  <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BaroEat</title>
+    <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-  <!-- Header -->
-  <header>
-    <section id="Header">
+<!--헤더-->
+<header id="mainHeader">
+  <section id="Header">
     <div id="HeaderLogo">
-      <img class="HearderLogo" src="img/BaroEatLogo.png" alt="BaroEat Logo" />
+      <img class="HearderLogo" src="img/HeaderLogo.png" alt="Header Logo" />
     </div>
     <nav class="HeaderNav">
       <ul>
-        <li><button class="NavButton">Video</button></li>
-        <li><button class="NavButton">Project</button></li>
-        <li><button class="NavButton">Design</button></li>
-        <li><button class="NavButton">Service</button></li>
+        <li><a class="NavButton" href="#Video">Video</a></li>
+        <li><a class="NavButton" href="#projectSection">Project</a></li>
+        <li><a class="NavButton" href="#designSection">Design</a></li>
+        <li><a class="NavButton" href="#serviceSection">Service</a></li>
       </ul>
     </nav>
-    </section>
-  </header>
+  </section>
+</header>
 
-  <!-- Main Content -->
-  <main>
-    <section id="Main">
-      <article class="Main1">
-      <p>늘어나는 디지털~~~~~~~<br>키오스크 사용이 어려운 당신을 위한 플랫폼 이얏호!!!!!</p>
-      <img id="MainLogo" src="img/BaroEatMainLogo.png" alt="Main Logo" />
-      </article>
+<!--메인-->
+<section id="Main">
+    <p>복잡한 키오스크 대신</p>
+    <p>시니어도 쉽게 쓰는 개인 맞춤형 연동 어플</p>
+    <img id="MainLogo" src="img/LogoTypo.png" alt="MainLogo" />
+</section> 
 
-      <article class="Main2">
-      <img id="MainImg" src="img/MainImg.png" alt="Main Image" />
-      </article>
-    </section>
+<!--영상-->
+<section id="Video">
+      <video class= "Mp4" src="img/Motion.mp4" controls></video>
+</section>
 
-    <section id="Video">
-      <video class= "Mp4" src="img/BaroEatLogo.mp4" controls></video>
-    </section>
+<!--오버뷰-->
+<section class="Overview">
+    <h1>Overview</h1>
+    <span>
+        대면주문보다 키오스크 사용량이 늘어나는 현재,<br>
+        키오스크 사용이 어려운 당신을 위한 바로잇
+    </span>
 
-    <section id="Project">
-      
-      <!-- Overview -->
-      <section class="Overview">
-        <h1>Overview</h1>
-        <span>
-          대면주문보다 키오스크 사용량이 늘어나는 현재,<br>
-          키오스크 사용이 어려운 당신을 위한 바로잇
-        </span>
-        <div class="OverviewFlex">
+    <div class="OverviewFlex">
         <div class="TextGroup left">
         <p class="OverviewTxt1">With the advancement of digitalization... It's annoying to write an explanation, snots text text text text text text text text text text text text text text </p>
         <p class="OverviewTxt2">디지털화가 발전하며 급속도로 변하게 된 시대의 우리는... text text text text text text text text text text text text text text text text text text text text </p>
@@ -65,144 +59,15 @@
         <p class="OverviewTxt3">We would like to develop a service that can bridge the digital gap...text text text text text text text text text text text text text text text text text text text text </p>
         <p class="OverviewTxt4">점점 양극단으로 치닫고 있는 이 세대의 디지털격차를 해소하고...text text text text text text text text text text text text text text text text text text text text text text text text text text </p>
         </div>
-      </div>
-      </section>
+    </div>
+</section>
 
-      <!-- Background Research -->
-      <section class="BackGroundResearch">
-        <article class="BG-Title">
-          <h1>BackGround Research</h1>
-          <p>(text)(text)(text)...<br>(text)(text)(text)...</p>
-        </article>
+<!--백그라운드리서치-->
 
-        <section class="Problem">
-          <div class="problem-box1">
-              <div class="txt-group1">
-                <p class="number">Problem 01</p>
-                <p class="title">디지털화에 어려움을 느끼는 연령층</p>
-                <p class="content">키오스크 보급 현황은 치솟지만, 고령층의 이용 능력은...</p>
-              </div>
-              <div class="img-group1">
-                <img class="P1-1" src="img/problem01Img1.png" alt="Problem Image 1" />
-                <img class="P1-2" src="img/Problem01Img2.png" alt="Problem Image 2" />
-              </div>
-          </div>
+<!--디자인시스템-->
 
-          <div class="problem-box2">
-            <div class="img-group2">
-              <img class="P2" src="img/Problem02Img.png" alt="Problem Image 3" />
-            </div>
+<!--서비스-->
 
-            <div class="txt-group2">
-              <p class="number">Problem 02</p>
-              <p class="title">고령층이 키오스크를 사용하지 않는 이유</p>
-              <p class="content">가장 큰 이유는 “사용법을 모름”으로 나타났습니다.</p>
-            </div>
-          </div>
-        </section>
-      </section>
-
-      <!-- Persona -->
-      <section class="Presona">
-        <article class="Pr-Title">
-          <h1>Persona</h1>
-          <p>(text)(text)...<br>(text)(text)...</p>
-        </article>
-
-        <div class="Presona-box1">
-          <img class="Pr-1" src="img/PresonaImg1.png" alt="Persona 1-1" />
-          <p class="content">(text)(text)...</p>
-          <img class="Pr-2" src="img/PresonaImg2.png" alt="Persona 1-2" />
-        </div>
-
-        <div class="Presona-box2">
-          <img class="Pr-1" src="img/PresonaImg1.png" alt="Persona 2-1" />
-          <p class="content">(text)(text)...</p>
-          <img class="Pr-2" src="img/PresonaImg2.png" alt="Persona 2-2" />
-        </div>
-      </section>
-
-      <!-- User Feedback -->
-      <section class="UseFeedBack">
-        <article class="UFB-Title">
-          <h1>User Feedback</h1>
-          <p>(text)(text)...<br>(text)(text)...</p>
-        </article>
-
-        <div class="UFB-container">
-          <div class="container1">
-            <div class="box">Box 1</div>
-            <div class="box">Box 2</div>
-            <div class="box">Box 3</div>
-            <div class="box">Box 4</div>
-          </div>
-          <div class="container2">
-            <div class="box">Box 5</div>
-            <div class="box">Box 6</div>
-            <div class="box">Box 7</div>
-            <div class="box">Box 8</div>
-          </div>
-          
-        </div>
-      </section>
-
-      <!-- Project Goal -->
-      <section class="ProjectGoal">
-        <article class="PJG-Title">
-          <h1>Project Goal</h1>
-          <span>간편하고 어쩌고 저쩌고<br>어쩌고 저쩌고한 서비스</span>
-          <p>바로잇은 어쩌고 저쩌고를 통해 어쩌고한 서비스를 만들어 갑니다 대충 멋진 말!!!</p>
-        </article>
-
-        <div class="PJG-container">
-          <div class="box1">Box 1</div>
-          <div class="box2">Box 2</div>
-          <div class="box3">Box 3</div>
-          <div class="box4">Box 4</div>
-          <div class="box5">Box 5</div>
-          <div class="box6">Box 6</div>
-          <div class="box7">Box 7</div>
-          <div class="box8">Box 8</div>
-        </div>
-      </section>
-
-    </section>
-
-    <!-- Design System -->
-    <section id="Design">
-      <h1>Design System</h1>
-
-      <article class="Logo">
-        <span>Logotype</span>
-        <img class="Logo1" src="img/BaroEatMainLogo.png" alt="Logotype" />
-      </article>
-
-      <article class="Appicon">
-        <span>Appicon</span>
-        <img class="Icon1" src="img/LogoImg2.png" alt="Icon 1" />
-        <img class="Icon2" src="img/LogoImg1.png" alt="Icon 2" />
-      </article>
-
-      <p class="DesignText">“바로잇”은 바로와 EAT(먹다)을 결합한 이름으로,<br>시니어층을 타겟으로 한 패스오더 어플이며<br>키오스크 사용이 어려운 시니어층들도 즉시 주문하여<br>바로 먹을 수 있는 간편한 서비스를 의미합니다.</p>
-
-      <article class="Color">
-        <span>Color</span>
-        <img class="ColorImg" src="img/Color.png" alt="Color System" />
-      </article>
-
-      <article class="Typography">
-        <span>Typography</span>
-        <img class="TypoImg" src="img/TypoImg.png" alt="Typography" />
-      </article>
-
-      <h1>AI 구조도</h1>
-      <article>
-        <img class="AI" src="img/AI.png" alt="AI 구조도" />
-      </article>
-    </section>
-  </main>
-
-  <script src="script.js"></script>
-
+<script src="script.js"></script>
 </body>
 </html>
