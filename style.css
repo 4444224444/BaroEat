@@ -56,7 +56,7 @@ html, body {
 .HeaderNav ul {
   list-style: none;
   display: flex;
-  gap: 5rem;
+  gap: 7rem;
   margin: 0;
   padding: 0;
 }
@@ -65,7 +65,7 @@ html, body {
   background: none;
   border: none;
   cursor: pointer;
-  font-size: 1.2rem;
+  font-size: 1.4rem;
   text-decoration: none;
   color: white;
 }
@@ -75,6 +75,7 @@ html, body {
 }
 
 #Main {
+  position: relative;
   width: 100%;
   min-height: 100vh;
   display: flex;
@@ -103,24 +104,34 @@ html, body {
   margin-left: 5rem;
 }
 
+
 .MainMockUpImgBox {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: flex-start;
-  align-items: flex-start;
-  position: absolute;
-  gap: 1rem;
-  margin-top: 2rem;
-  margin-left: 5rem; /* 텍스트 정렬선 맞춤 */
+  position: absolute;   /* Main 기준으로 절대 위치 */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }
 
 .MainMockUpImgBox img {
-  width: 10rem;       /* 이미지 확 줄임 */
+  opacity: 0;
+  transform: translateY(-80px) scale(1.05);  /* 위에서 살짝 커진 느낌으로 내려옴 */
+  transition: transform 0.4s ease-out, opacity 0.3s ease-in;
+  position: absolute;
+  width: 600px;
   height: auto;
-  object-fit: contain;
 }
 
+.MainMockUp1 { top: -490px; left: 900px; }
+.MainMockUp2 { top: -20px;  left: 1010px; }
+.MainMockUp3 { top: 425px;  left: 1140px; }
+.MainMockUp4 { top: 70px; left: 560px; }
+.MainMockUp5 { top: 545px; left: 675px; }
 
+.MainMockUpImgBox img.show {
+  opacity: 1;
+  transform: translateY(0) scale(1); /* 제자리 + 자연스럽게 꽂히기 */
+}
 #Video {
   width: 100%;
   padding: 50px 0; /* 위아래 여백 */

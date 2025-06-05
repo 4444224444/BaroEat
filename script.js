@@ -121,3 +121,16 @@ problems.forEach(el => problemobserver.observe(el));
 
     observer.observe(video);
   });
+
+
+  //메인
+
+  window.addEventListener('load', () => {
+    const images = document.querySelectorAll('.MainMockUpImgBox img');
+
+    images.forEach((img, index) => {
+      setTimeout(() => {
+        img.classList.add('show');
+      }, index * 150); // ✅ 더 빠르게: 0.15초 간격
+    });
+  });
