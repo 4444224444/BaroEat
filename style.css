@@ -7,12 +7,6 @@ html, body {
   background-color: #F4F8FB;
 }
 
-.ddd {
-  margin-top: 50px;
-  font-size: 180px;
-  color: skyblue;
-}
-
 #mainHeader {
   position: fixed;
   top: 0;
@@ -89,6 +83,7 @@ html, body {
   align-items: flex-start; /* 왼쪽 정렬 */
   background-color: #01C38E;
   text-align: left; /* 텍스트 왼쪽 정렬 */
+  overflow: hidden;
 } 
 
 #Main p {
@@ -108,6 +103,23 @@ html, body {
   margin-left: 5rem;
 }
 
+.MainMockUpImgBox {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+  position: absolute;
+  gap: 1rem;
+  margin-top: 2rem;
+  margin-left: 5rem; /* 텍스트 정렬선 맞춤 */
+}
+
+.MainMockUpImgBox img {
+  width: 10rem;       /* 이미지 확 줄임 */
+  height: auto;
+  object-fit: contain;
+}
+
 
 #Video {
   width: 100%;
@@ -125,8 +137,40 @@ html, body {
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* 그림자 (선택) */
 }
 
+.Mp4 {
+  opacity: 0;
+  transform: translateY(80px) scale(0.95);
+  transition: all 0.8s ease-out;
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+  display: block;
+}
+
+.Mp4.show {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
 
 /* 오버뷰 시작 */
+.TextGroup {
+  opacity: 0;
+  transform: translateY(-40px);
+  transition: all 0.8s ease-out;
+}
+
+.TextGroup.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.TextGroup.left {
+  transition-delay: 0.2s;
+}
+.TextGroup.right {
+  transition-delay: 0.5s;
+}
 
 .OverviewTitleWrap {
   position: relative;
@@ -236,6 +280,19 @@ html, body {
 }
 
 /* 프라블럼 */
+.problem-box1,
+.problem-box2 {
+  opacity: 0;
+  transform: translateY(40px); /* 아래에서 위로 올라오도록 */
+  transition: all 0.8s ease-out;
+}
+
+.problem-box1.show,
+.problem-box2.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 .ProblemBackGround {
   position: relative;
   z-index: 1;
@@ -516,8 +573,8 @@ html, body {
 }
 
 
-
-
+/* 유저피드백 끝!!!! */
+/*프로젝트골시작!!!! */
 
 
 #ProjectGoal {
@@ -530,7 +587,7 @@ html, body {
   background-color: #132D46;
   border-radius: 70px 70px 0 0;
   margin: 0px;
-  height: 60rem;
+  height: 70rem;
   width: 100%;
   max-width: 100%;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); /* 그림자 */
@@ -582,9 +639,9 @@ html, body {
 
 .fall-group {
   position: relative;
-  padding-top: 25rem;;
+  padding-top: 38rem;
   width: 100%;
-  height: 60rem;
+  height: 70rem;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -595,31 +652,317 @@ html, body {
 .fall-box {
   position: absolute;
   background-color: #F4F8FB;
-  color: black;
-  width: 650px;
-  height: 144px;
+  color: #1A1E29;
   border-radius: 23px;
   font-weight: bold;
-  font-size: 60px;
   text-align: center;
   white-space: nowrap;
   pointer-events: none;
-
   display: flex;
-  justify-content: center; /* 가로 중앙 */
-  align-items: center;     /* 세로 중앙 */
+  justify-content: center;
+  align-items: center;
 
-  transform: translateY(-300px);
-  transition: transform 0.25s cubic-bezier(0.6, 0.05, 0.9, 0.2), opacity 0.2s ease-out;
+  opacity: 0;
+  transform: translate(var(--x), var(--startY, -400px)) rotate(var(--r));
+  transition: transform 0.6s cubic-bezier(0.6, 0.05, 0.9, 0.2), opacity 0.4s ease-out;
 }
 
-
-/* 쾅! 떨어진 후 배치된 상태 */
 .fall-box.active {
   opacity: 1;
   transform: translate(var(--x), var(--y)) rotate(var(--r));
 }
 
+/* 디자인시스템시작!!!!!! */
+
+.DesignSystemWrap {
+  margin: 8rem 11rem;
+  position: relative;
+  display: inline-block; /* 또는 flex, block 등 */
+  z-index: 2; /* 텍스트는 위 */
+}
+
+.DesignSystemTitleBox {
+  position: relative;
+  display: flex;
+}
+
+.SquareBehind {
+  position: absolute;
+  top: calc(50% - 20px); 
+  left: calc(0% - 20px);
+  width: 2rem;
+  height: auto;
+  z-index: -1; /* 이미지가 위로 올라오게 */
+}
+
+.DesignSystemTitleBox h1 {
+  font-family: 'pretendard';
+  font-size: 1.7rem;
+}
+
+.LogoApp {
+  display: flex;
+  justify-content: flex-start;  
+  align-items: flex-start;
+  gap: 3rem;                 /* 두 컨테이너 사이 간격 */
+  flex-wrap: wrap;          /* 반응형 줄바꿈 허용 */
+  font-family: 'pretendard';
+}
+
+.LogotypeContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* 또는 flex-start + margin-top: auto 사용 */
+  height: 100%;
+}
+
+.LogotypeContainer p {
+  font-size: 1rem;
+  color: #8B8B8B;
+  margin-top: 3rem;
+  font-weight: 500;
+}
+
+.LogotypeContainer span {
+  font-size: 1.4rem;
+  color: #1A1E29;
+  margin-top: 1rem;
+}
+
+.LogoSystem {
+  width: 28rem;
+  height: auto;
+  margin-top: 8rem;
+}
+
+.AppiconContainer {
+  display: flex;
+  flex-direction: column;      /* 수직 정렬 */
+  justify-content: space-between;
+  height: 100%;
+}
+
+.AppiconContainer p {
+  font-size: 1rem;
+  color: #8B8B8B;
+  margin-top: 3rem;
+  font-weight: 500;
+}
+
+.AppiconContainer span {
+  font-size: 1.4rem;
+  color: #1A1E29;
+  margin-top: 1rem;
+}
+
+.AppiconImageWrap {
+  display: flex;
+  justify-content: flex-start;     /* 이미지 가운데 정렬 */
+  align-items: flex-end;       /* 필요 시 bottom 정렬 */
+  gap: 1.2rem;
+  margin-top: 5rem;
+}
+
+.AppiconFrame,
+.Appicon {
+  width: 18rem;
+  height: auto;
+}
+
+.LogotypeContainer,
+.AppiconContainer {
+  flex: 1;
+  min-width: 30rem; /* 반응형 대응 */
+}
+/*타이포 컬러 시작!!!*/
+
+.TypoContainer {
+  display: flex;
+  font-family: 'pretendard';
+  gap: 6rem;  
+}
+
+.TypoTitle{
+  color: #8B8B8B;
+  font-weight: 500;
+  margin-top: 10rem;
+}
+
+.Font {
+  font-size: 4.5rem;
+  font-weight: 600;
+  margin-bottom: 2rem;
+}
 
 
+.Typo1 p {
+  font-size: 1.8rem;
+  margin-top: 0rem;
+}
 
+.RegularLabel {
+  display: flex;
+  align-items: center;     /* ✅ 수직 중앙 정렬 */
+  gap: 3rem;              /* ✅ 텍스트 간 간격 */
+  font-size: 1rem;          /* 기본 폰트 사이즈 */
+  font-weight: 400;
+  margin-bottom: 3rem;
+  cursor: default;
+}
+
+.RegularLabel .Regular {
+  font-size: 3rem;          /* ✅ "복잡함은 빼고"만 크게 */
+  font-weight: 400;
+}
+
+.Regular {
+  display: inline-block;
+  white-space: nowrap;
+  opacity: 0.2; /* 처음에 살짝 보이게 */
+  transition: opacity 0.3s ease;
+}
+
+.MediumLabel {
+  display: flex;
+  align-items: center;   /* ✅ 세로 중앙 정렬 */
+  gap: 3rem;           /* ✅ 좌우 간격 (선택사항) */
+  font-size: 1rem;       /* 기본 텍스트 크기 */
+  font-weight: 500;
+  margin-bottom: 4rem;
+}
+
+.MediumLabel .Medium {
+  font-size: 3rem;       /* ✅ 강조 텍스트 크게 */
+  font-weight: 500;
+}
+
+.SemiBoldLabel {
+  display: flex;
+  align-items: center;   /* ✅ 세로 중앙 정렬 */
+  gap: 3rem;           /* ✅ 좌우 간격 */
+  font-size: 1rem;     /* 기본 텍스트 크기 */
+  font-weight: 600;
+  margin-bottom: 4rem;
+}
+
+.SemiBoldLabel .SemiBold {
+  font-size: 3rem;       /* 강조 텍스트 더 크게 */
+  font-weight: 600;
+}
+
+.ColorWrapper {
+  display: flex;
+  justify-content: center;  /* ✅ 가로 중앙 정렬 */
+  width: 100%;
+}
+
+.ColorImage {
+  margin-top: 4rem;
+  margin-bottom: 14rem;
+  width: 72rem;
+  height: auto;
+}
+
+.IATitleBox {
+  position: relative;
+  display: flex;
+}
+
+.SquareAIBehind {
+  position: absolute;
+  top: calc(50% - 20px); 
+  left: calc(0% - 20px);
+  width: 2rem;
+  height: auto;
+  z-index: -1; /* 이미지가 위로 올라오게 */
+}
+
+.IATitleBox h1 {
+  font-family: 'pretendard';
+  font-size: 1.7rem;
+}
+
+.AIImageWrapper {
+  display: flex;
+  justify-content: center;  /* ✅ 가로 중앙 정렬 */
+  width: 100%;
+  margin-top: 3rem;
+  margin-bottom: 5rem;
+}
+
+.AIrnwheh {
+  width: 72rem;
+  height: auto;
+
+  /* ✅ 하단이 점점 흐려지게 (위→아래 방향) */
+  -webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 85%, rgba(0, 0, 0, 0));
+  mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 85%, rgba(0, 0, 0, 0));
+  
+  -webkit-mask-size: 100% 100%;
+  mask-size: 100% 100%;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+}
+
+/* 디자인시스템끝!!!! */
+
+#Service-main {
+  width: 100vw;
+  padding: 7rem 11rem;
+  background-image: url('img/ServiceBackground.png'); /* 경로 정확히 */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  min-height: 100vh; /* or 적당한 높이 */
+}
+
+.ServiceTitleBox {
+  position: relative;
+  display: flex;
+}
+
+
+.TriangleBehind {
+  position: absolute;
+  top: calc(50% - 20px); 
+  left: calc(0% - 20px);
+  width: 2rem;
+  height: auto;
+  z-index: 0; /* 이미지가 위로 올라오게 */
+}
+
+.ServiceTitleBox h1 {
+  font-family: 'pretendard';
+  font-size: 1.7rem;
+  z-index: 1;
+  color: #ffffff;
+}
+
+.Service1 {
+display: flex;
+gap: 11rem;
+}
+
+.Service1Text {
+  margin-top: 10rem;
+}
+
+.Service1Text h1 {
+  font-family: 'pretendard';
+  font-weight: 700;
+  font-size: 2.5rem;
+  color: #ffffff;
+    margin-bottom: 0.5rem;
+}
+
+.Service1Text p {
+  font-family: 'pretendard';
+  font-size: 1rem;
+  color: #ffffff;
+  line-height: 1.6;
+}
+
+.ServiceMain{
+  width: 35rem;
+}
