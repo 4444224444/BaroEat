@@ -132,8 +132,8 @@ html, body {
 
 .CircleBehind {
   position: absolute;
-  top: 10%;
-  left: 38.5%;
+  top: 1.2rem;
+  left: 18rem;
   width: 2rem;
   height: auto;
   z-index: 1; /* 이미지가 위로 올라오게 */
