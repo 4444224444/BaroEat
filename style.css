@@ -10,7 +10,7 @@ html, body {
 .ddd {
   margin-top: 50px;
   font-size: 180px;
-  color: crimson;
+  color: skyblue;
 }
 
 #mainHeader {
@@ -258,11 +258,16 @@ html, body {
   margin-top: 7rem;
   margin-left: 7em;
 }
-.BGRTitleWrap h1 {
+
+.BackGroundResearchTitleBox {
+  position: relative;
+  display: flex;
+}
+
+.BackGroundResearchTitleBox h1 {
   font-family: 'pretendard';
   font-size: 1.7rem;
   color: #ffffff;
-
 }
 
 .BGRTitleWrap span {
@@ -275,7 +280,8 @@ html, body {
 
 .CircleBGRBehind {
   position: absolute;
-  transform: translate(-65%, -16%);
+  top: calc(50% - 20px); 
+  left: calc(0% - 20px);
   width: 2rem;
   height: auto;
   z-index: -1; /* 이미지가 위로 올라오게 */
@@ -375,8 +381,6 @@ html, body {
   background-color: #F4F8FB;
 }
 
-
-
 .PersonaTitleWrap {
   margin: 4.5rem 11rem;
   position: relative;
@@ -384,18 +388,25 @@ html, body {
   z-index: 2; /* 텍스트는 위 */
 }
 
-.CirclePTBehind {
-  transform: translate(-50%, 50%);
-  width: 2rem;
-  height: auto;
-  position: absolute;
-  z-index: -1; /* 텍스트보다 아래, 배경보다 위 */
+.PersonaTitleBox {
+  position: relative;
+  display: flex;
 }
 
-.PersonaTitleWrap h1 {
+.CirclePTBehind {
+  position: absolute;
+  top: calc(50% - 20px); 
+  left: calc(0% - 20px);
+  width: 2rem;
+  height: auto;
+  z-index: -1; /* 이미지가 위로 올라오게 */
+}
+
+.BackGroundResearchTitleBox h1 {
   font-family: 'pretendard';
   font-size: 1.7rem;
 }
+
 
 .PersonaTitleWrap span {
   font-family: 'pretendard';
@@ -416,32 +427,43 @@ html, body {
 
 #Userfeedback {
   background-color: #F4F8FB;
-  margin-top: 13rem;
+  margin-top: 11rem;
 }
 
 .UserfeedbackWrap {
-  font-family: 'pretendard';
-  text-align: center;
-  position: relative; /* 필수 */
-  z-index: 2;
+  position: relative;
+  text-align: center;  /* 전체 텍스트 가운데 정렬 */
+}
+
+.UserfeedbackTitleBox {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .CirclUFBehind {
-  transform: translate(-355%, -15%);
+  position: absolute;
+  top: calc(50% - 20px); 
+  left: calc(0% - 20px);
   width: 2rem;
   height: auto;
-  position: absolute;
-  z-index: -1; /* UserfeedbackWrap보다 뒤 */
+  z-index: 0; /* 이미지가 위로 올라오게 */
 }
 
-.UserfeedbackWrap h1{
+.UserfeedbackTitleBox h1 {
+  font-family: 'pretendard';
   font-size: 1.7rem;
+  position: relative;
+  z-index: 1;  /* ✅ 도형보다 앞에 오도록 설정 */
+  margin: 0;
 }
 
-.UserfeedbackWrap span{
+.UserfeedbackWrap span {
   font-size: 1.2rem;
   color: #8B8B8B;
-  display: block; 
+  display: block;
+  margin-top: 0.5rem;
 }
 
 .scroll-container {
@@ -516,32 +538,45 @@ html, body {
 }
 
 .ProjectGoalWrap {
-  font-family: 'pretendard';
+  position: relative;
   text-align: center;
-  position: relative; /* 필수 */
-  z-index: 2;
   color: #ffffff;
 }
 
-.CirclPGBehind {
-  transform: translate(-355%, -15%);
-  width: 2rem;
-  height: auto;
-  position: absolute;
-  z-index: -1; /* UserfeedbackWrap보다 뒤 */
+.ProjectGoalWrapTitleBox {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.ProjectGoalWrap h1{
+.CirclPGBehind {
+  position: absolute;
+  top: calc(50% + 25px); 
+  left: calc(0% - 20px);
+  width: 2rem;
+  height: auto;
+  z-index: 0;
+}
+
+.ProjectGoalWrapTitleBox h1 {
+  font-family: 'pretendard';
   font-size: 1.7rem;
+  position: relative;
+  z-index: 1;
   margin-top: 7rem;
 }
 
-.ProjectGoalWrap span{
+.ProjectGoalWrap span {
   font-size: 2.3rem;
+  display: block;
+  margin-top: 0.3rem; /* ✅ h1과 간격 조정 */
 }
 
-.ProjectGoalWrap p{
+.ProjectGoalWrap p {
   font-size: 1.4rem;
+  display: block;
+  margin-top: 0.8rem; /* ✅ span과 간격 조정 */
 }
 
 
