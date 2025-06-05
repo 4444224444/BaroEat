@@ -10,7 +10,7 @@ html, body {
 .ddd {
   margin-top: 50px;
   font-size: 180px;
-  color: black;
+  color: chocolate;
 }
 
 #mainHeader {
@@ -149,7 +149,7 @@ html, body {
 
 .CircleBehind {
   position: absolute;
-  top: 1.2rem;
+  top: calc(50% - 1.2rem); 
   left: calc(50% - 5.2rem);
   width: 2rem;
   z-index: 1;
