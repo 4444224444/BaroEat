@@ -10,7 +10,7 @@ html, body {
 .ddd {
   margin-top: 50px;
   font-size: 180px;
-  color: blue;
+  color: red;
 }
 
 #mainHeader {
@@ -133,32 +133,33 @@ html, body {
   display: inline-block;
 }
 
-
-.TitleBox {
-  position: relative;
-  display: inline-block;
-}
-
-.CircleBehind {
-  position: absolute;
-  top: 10%;     /* h1 기준 위로 살짝 */
-  left: 18rem;        /* h1 중앙에 정렬 */
-  width: 2rem;
-  height: auto;
-  z-index: 1;
-  pointer-events: none;
-}
-
 #Overview {
   text-align: center;
   padding: 80px 20px 40px; /* 위 여백 크게, 아래 여백은 적당히 */
   background-color: #F4F8FB;
 }
 
-#Overview h1 {
+.OverviewTitleBox {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;  /* ✅ h1과 span 모두 수직 가운데 정렬 */
+  text-align: center;
+}
+
+.CircleBehind {
+  position: absolute;
+  top: 20px;
+  left: 288px;
+  width: 32px;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.OverviewTitleBox h1 {
   font-size: 1.8rem;
   margin-bottom: 20px;
-  font-family: 'pretendard';
+  font-family: 'Pretendard';
   position: relative;
   z-index: 2;
 }
