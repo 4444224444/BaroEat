@@ -1,4 +1,5 @@
 html, body {
+  font-family: 'Pretendard', sans-serif;
   margin: 0;
   padding: 0;
   overflow-x: hidden; /* 가로 스크롤 방지 */
@@ -126,12 +127,18 @@ html, body {
   display: inline-block;
 }
 
+
+.TitleBox {
+  position: relative;
+  display: inline-block;
+}
+
 .CircleBehind {
   position: absolute;
   top: 10%;     /* h1 기준 위로 살짝 */
-  left: 41%;        /* h1 중앙에 정렬 */
-  transform: translateX(-50%); /* 정확한 중앙 위치 */
+  left: 18rem;        /* h1 중앙에 정렬 */
   width: 2rem;
+  height: auto;
   z-index: 1;
   pointer-events: none;
 }
