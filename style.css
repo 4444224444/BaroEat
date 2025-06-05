@@ -126,9 +126,14 @@ html, body {
   display: inline-block;
 }
 
+.BGRTitleWrap {
+  position: relative;
+}
+
 .CircleBehind {
   position: absolute;
-  transform: translate(-250%, 50%);
+  top: 10%;
+  left: 38.5%;
   width: 2rem;
   height: auto;
   z-index: 1; /* 이미지가 위로 올라오게 */
