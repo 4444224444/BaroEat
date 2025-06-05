@@ -126,24 +126,14 @@ html, body {
   display: inline-block;
 }
 
-.BGRTitleWrap {
-  position: relative;
-}
-
 .CircleBehind {
   position: absolute;
-  top: 1.2rem;
-  left: 18rem;
+  top: 1.2rem;     /* h1 기준 위로 살짝 */
+  left: 41%;        /* h1 중앙에 정렬 */
+  transform: translateX(-50%); /* 정확한 중앙 위치 */
   width: 2rem;
-  height: auto;
-  z-index: 1; /* 이미지가 위로 올라오게 */
-}
-
-.OverviewTitleWrap h1 {
-  position: relative;
-  z-index: 2; /* 텍스트가 더 위에 보이게 */
-  font-size: 2.5rem;
-  color: #000;
+  z-index: 1;
+  pointer-events: none;
 }
 
 #Overview {
@@ -156,9 +146,12 @@ html, body {
   font-size: 1.8rem;
   margin-bottom: 20px;
   font-family: 'pretendard';
+  position: relative;
+  z-index: 2;
 }
 
 #Overview span {
+  position: relative;
   font-size: 2.5rem;
   line-height: 1.6;
   display: inline-block;
