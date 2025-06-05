@@ -3,6 +3,7 @@ html, body {
   padding: 0;
   overflow-x: hidden; /* 가로 스크롤 방지 */
   scroll-behavior: smooth;
+  background-color: #F4F8FB;
 }
 
 #mainHeader {
@@ -127,8 +128,8 @@ html, body {
 
 .CircleBehind {
   position: absolute;
-  transform: translate(-310%, 90%);
-  width: 2.25rem;
+  transform: translate(-250%, 50%);
+  width: 2rem;
   height: auto;
   z-index: 1; /* 이미지가 위로 올라오게 */
 }
@@ -146,14 +147,14 @@ html, body {
   background-color: #F4F8FB;
 }
 
-.Overview h1 {
-  font-size: 2.5rem;
+#Overview h1 {
+  font-size: 1.8rem;
   margin-bottom: 20px;
   font-family: 'pretendard';
 }
 
-.Overview span {
-  font-size: 1.2rem;
+#Overview span {
+  font-size: 2.5rem;
   line-height: 1.6;
   display: inline-block;
   font-family: 'Pretendard';
@@ -164,8 +165,8 @@ html, body {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  gap: 3rem; /* 박스 사이 여백 */
-  margin: 5rem 11rem;
+  gap: 2rem; /* 박스 사이 여백 */
+  margin: 5rem 5rem;
   flex-wrap: wrap; /* 반응형 깨지지 않게 */
 }
 
@@ -226,8 +227,8 @@ html, body {
 .ProblemBackGround {
   position: relative;
   z-index: 1;
-  margin: 0 5rem;
-  min-height: 300px; /* 최소 높이 줘야 배경 보임 */
+  margin: 0 4rem;
+  min-height: 113.75rem; /* 최소 높이 줘야 배경 보임 */
   overflow: hidden;
 }
 
@@ -235,125 +236,244 @@ html, body {
   content: '';
   position: absolute;
   width: 100%;
-  height: 133rem;
+  height: 110rem;
   background-color: #132D46;
   border-radius: 70px;
   z-index: -1;
 }
 
+.BGRTitleWrap{
+  margin-top: 7rem;
+  margin-left: 7em;
+}
 .BGRTitleWrap h1 {
   font-family: 'pretendard';
-  font-size: 1.2rem;
+  font-size: 1.7rem;
   color: #ffffff;
-  margin-left: 13rem;
+
 }
 
 .BGRTitleWrap span {
   font-family: 'pretendard';
-  font-size: 0.8rem;
+  font-size: 1rem;
   color: #ffffff;
-  margin-left: 13rem;
   display: block;        /* 블록 요소로 만들어야 정렬 가능 */
   text-align: left;
 }
 
-
+.CircleBGRBehind {
+  position: absolute;
+  transform: translate(-65%, -16%);
+  width: 2rem;
+  height: auto;
+  z-index: -1; /* 이미지가 위로 올라오게 */
+}
 
 .problem-box1 {
   display: flex;
+  align-items: center;
   justify-content: space-between;
   align-items: flex-start;
   gap: 1rem; /* 텍스트와 이미지 사이 간격 */
+  margin: 7rem;
 }
 
 .txt-group1 {
+  display: flex;
   font-family: 'pretendard';
   flex-direction: column;
-  flex: 5; /* 텍스트 그룹 너비 자동 */
-  margin-left: 5rem;
+  margin-top: 12rem;
+}
+
+.txt-group1 .number {
+  color: #ffffff;
+  font-size: 1.3rem;
+  margin-bottom: 0;
+}
+
+.txt-group1 .title {
+  color: #01C38E;
+  font-size: 1.6rem;
+  margin-top: 0.2rem;
+  margin-bottom: 1.6rem;
+  font-weight: bold; 
+}
+
+.txt-group1 .content {
+  color: #ffffff;
+  font-size: 1.4rem;
+  margin-top: 0rem;;
 }
 
 .problem01 {
-  width: 600px; /* 이미지 크기 조정 */
+  width: 45rem; /* 이미지 크기 조정 */
   height: auto;
+  object-fit: contain;
   flex-shrink: 0; /* 이미지가 줄어들지 않도록 */
-  margin-right: 5rem;
 }
 
 .problem-box2 {
-  display: flex;
   flex-direction: row-reverse; /* 요소 순서를 반대로: 텍스트 → 이미지 */
+  display: flex;
+  align-items: center;
   justify-content: space-between;
   align-items: flex-start;
-  margin-top: 5rem;
-  gap: 1rem;
+  gap: 1rem; /* 텍스트와 이미지 사이 간격 */
+  margin: 7rem;
 }
 
 .txt-group2 {
-  font-family: 'pretendard';
   display: flex;
+  font-family: 'pretendard';
   flex-direction: column;
-  flex: 5;
-  margin-right: 5rem;
   text-align: right;
+  margin-top: 12rem;
+}
+
+.txt-group2 .number {
+  color: #ffffff;
+  font-size: 1.3rem;
+  margin-bottom: 0;
+}
+
+.txt-group2 .title {
+  color: #01C38E;
+  font-size: 1.6rem;
+  margin-top: 0.2rem;
+  margin-bottom: 1.6rem;
+  font-weight: bold; 
+}
+
+.txt-group2 .content {
+  color: #ffffff;
+  font-size: 1.4rem;
+  margin-top: 0rem;;
 }
 
 .problem02 {
-  width: 600px;
+  width: 45rem; /* 이미지 크기 조정 */
   height: auto;
-  flex-shrink: 0;
-  margin-left: 5rem;
+  object-fit: contain;
+  flex-shrink: 0; /* 이미지가 줄어들지 않도록 */
+}
+
+/* 백그라운리서치끝!!!!!! */
+
+#Persona {
+  background-color: #F4F8FB;
+}
+
+
+
+.PersonaTitleWrap {
+  margin: 4.5rem 11rem;
+  position: relative;
+  display: inline-block; /* 또는 flex, block 등 */
+  z-index: 2; /* 텍스트는 위 */
+}
+
+.CirclePTBehind {
+  transform: translate(-50%, 50%);
+  width: 2rem;
+  height: auto;
+  position: absolute;
+  z-index: -1; /* 텍스트보다 아래, 배경보다 위 */
+}
+
+.PersonaTitleWrap h1 {
+  font-family: 'pretendard';
+  font-size: 1.7rem;
+}
+
+.PersonaTitleWrap span {
+  font-family: 'pretendard';
+  font-size: 1rem;
+  color: #8B8B8B;
+  display: block;        /* 블록 요소로 만들어야 정렬 가능 */
+  text-align: left;
 }
 
 .presona {
   display: block;       /* inline 기본값을 block으로 바꿔야 margin 적용됨 */
   margin: 0 auto;       /* 좌우 마진 자동 설정 = 가운데 정렬 */
-  width: 900px;         /* 원하는 너비 유지 */
-  height: 600px;        /* 원하는 높이 유지 */
+  width: 75rem;         /* 원하는 너비 유지 */
+  height: auto;        /* 원하는 높이 유지 */
 }
 
+/* 페르소나 끝!!!!!!!! */
+
+#Userfeedback {
+  background-color: #F4F8FB;
+  margin-top: 13rem;
+}
+
+.UserfeedbackWrap {
+  font-family: 'pretendard';
+  text-align: center;
+  position: relative; /* 필수 */
+  z-index: 2;
+}
+
+.CirclUFBehind {
+  transform: translate(-355%, -15%);
+  width: 2rem;
+  height: auto;
+  position: absolute;
+  z-index: -1; /* UserfeedbackWrap보다 뒤 */
+}
+
+.UserfeedbackWrap h1{
+  font-size: 1.7rem;
+}
+
+.UserfeedbackWrap span{
+  font-size: 1.2rem;
+  color: #8B8B8B;
+  display: block; 
+}
 
 .scroll-container {
   width: 100%;
   overflow: hidden;
-  background-color: #ffffff;
+  background-color: #F4F8FB;
   display: flex;
   flex-direction: column;
-  gap: 2rem;
-  padding: 2rem 0;
+  gap: 1.5rem;
+  padding: 4rem 0;
 }
 
 /* 공통 트랙 - 두 줄 모두 */
 .scroll-track {
   display: flex;
-  gap: 2rem;
+  gap: 1.5rem;
   width: fit-content;
-  animation: scroll-left 10s linear infinite;
+  animation: scroll-left 20s linear infinite;
 }
 
 /* 박스 스타일 */
 .box {
-  width: 160px;
-  height: 100px;
-  border-radius: 12px;
+  width: 25rem;
+  height: 12rem;
+  border-radius: 60px;
   flex-shrink: 0;
   display: flex;
   justify-content: center;
   align-items: center;
-  font-weight: bold;
   font-size: 1rem;
-  color: white;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
 }
 
 /* 색상 구분 */
-.box1 { background-color: #01C38E; }
-.box2 { background-color: #FF8A65; }
-.box3 { background-color: #4FC3F7; }
-.box4 { background-color: #BA68C8; }
-.box5 { background-color: #F06292; }
-.box6 { background-color: #FFD54F; }
-.box7 { background-color: #81D4FA; }
-.box8 { background-color: #A1887F; }
+.box1 { background-color: #01C38E; color: white;}
+.box2 { background-color: #FFFFFF; }
+.box3 { background-color: #01C38E; color: white;}
+.box4 { background-color: #FFFFFF; }
+
+.box5 { background-color: #FFFFFF; }
+.box6 { background-color: #01C38E; color: white;}
+.box7 { background-color: #FFFFFF; }
+.box8 { background-color: #01C38E; color: white;}
+.box9 { background-color: #FFFFFF; }
 
 /* 애니메이션 */
 @keyframes scroll-left {
@@ -364,11 +484,60 @@ html, body {
 
 
 
+
+
+#ProjectGoal {
+  background-color: #F4F8FB;
+  margin-top: 7rem;
+}
+
+.ProjectGoalBackGround {
+  position: relative;
+  background-color: #132D46;
+  border-radius: 70px 70px 0 0;
+  margin: 0px;
+  height: 60rem;
+  width: 100%;
+  max-width: 100%;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); /* 그림자 */
+  overflow: hidden; /* 내부 이미지가 튀어나가지 않게 */
+}
+
+.ProjectGoalWrap {
+  font-family: 'pretendard';
+  text-align: center;
+  position: relative; /* 필수 */
+  z-index: 2;
+  color: #ffffff;
+}
+
+.CirclPGBehind {
+  transform: translate(-355%, -15%);
+  width: 2rem;
+  height: auto;
+  position: absolute;
+  z-index: -1; /* UserfeedbackWrap보다 뒤 */
+}
+
+.ProjectGoalWrap h1{
+  font-size: 1.7rem;
+  margin-top: 7rem;
+}
+
+.ProjectGoalWrap span{
+  font-size: 2.3rem;
+}
+
+.ProjectGoalWrap p{
+  font-size: 1.4rem;
+}
+
+
 .fall-group {
   position: relative;
-   padding-top: 120px;
+  padding-top: 25rem;;
   width: 100%;
-  height: 10rem;
+  height: 60rem;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -380,17 +549,21 @@ html, body {
   position: absolute;
   background-color: #F4F8FB;
   color: black;
-  width: 140px;
-  height: 38px;
-  line-height: 38px;
-  text-align: center;
-  border-radius: 8px;
+  width: 650px;
+  height: 144px;
+  border-radius: 23px;
   font-weight: bold;
-  font-size: 14px;
+  font-size: 60px;
+  text-align: center;
+  white-space: nowrap;
+  pointer-events: none;
+
+  display: flex;
+  justify-content: center; /* 가로 중앙 */
+  align-items: center;     /* 세로 중앙 */
+
   transform: translateY(-300px);
   transition: transform 0.25s cubic-bezier(0.6, 0.05, 0.9, 0.2), opacity 0.2s ease-out;
-  pointer-events: none;
-  white-space: nowrap;
 }
 
 
