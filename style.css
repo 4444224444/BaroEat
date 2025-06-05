@@ -128,7 +128,7 @@ html, body {
 
 .CircleBehind {
   position: absolute;
-  top: 1.2rem;     /* h1 기준 위로 살짝 */
+  top: 10%;     /* h1 기준 위로 살짝 */
   left: 41%;        /* h1 중앙에 정렬 */
   transform: translateX(-50%); /* 정확한 중앙 위치 */
   width: 2rem;
