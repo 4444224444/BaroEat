@@ -17,8 +17,7 @@ html, body {
 }
 
 #mainHeader.scrolled {
-  background-color: #F4F8FB; /* 반투명 */
-  backdrop-filter: blur(10px); /* 선택사항: 흐림효과 */
+  background-color: rgba(244, 248, 251, 0.7); /* 0.0 ~ 1.0 → 70% 불투명 */
 }
 
 #Header {
@@ -107,7 +106,7 @@ html, body {
   padding: 50px 0; /* 위아래 여백 */
   display: flex;
   justify-content: center; /* 가운데 정렬 */
-  background-color: #f9f9f9; /* 배경색 (선택) */
+  background-color: #F4F8FB /* 배경색 (선택) */
 }
 
 #Video video {
@@ -117,3 +116,290 @@ html, body {
   border-radius: 10px; /* 둥글게 (선택) */
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* 그림자 (선택) */
 }
+
+
+/* 오버뷰 시작 */
+
+.OverviewTitleWrap {
+  position: relative;
+  display: inline-block;
+}
+
+.CircleBehind {
+  position: absolute;
+  transform: translate(-310%, 90%);
+  width: 2.25rem;
+  height: auto;
+  z-index: 1; /* 이미지가 위로 올라오게 */
+}
+
+.OverviewTitleWrap h1 {
+  position: relative;
+  z-index: 2; /* 텍스트가 더 위에 보이게 */
+  font-size: 2.5rem;
+  color: #000;
+}
+
+#Overview {
+  text-align: center;
+  padding: 80px 20px 40px; /* 위 여백 크게, 아래 여백은 적당히 */
+  background-color: #F4F8FB;
+}
+
+.Overview h1 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  font-family: 'pretendard';
+}
+
+.Overview span {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  display: inline-block;
+  font-family: 'Pretendard';
+  font-weight: 500;
+}
+
+.OverviewFlex {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 3rem; /* 박스 사이 여백 */
+  margin: 5rem 11rem;
+  flex-wrap: wrap; /* 반응형 깨지지 않게 */
+}
+
+/* 좌우 텍스트 그룹 */
+.TextGroup {
+  flex: 1;
+  min-width: 280px;
+}
+
+/* 중앙 이미지 영역 */
+.OverviewCenter {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2.5rem;
+  min-width: 280px;
+}
+
+#OverviewImg {
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+}
+
+.OverviewTxt1 {
+  color: #01C38E;
+}
+
+.OverviewTxt3 {
+  color: #01C38E;
+}
+
+.OverviewTxt1, .OverviewTxt2 {
+  text-align: right;
+  margin-bottom: 1rem;
+  line-height: 1.6;
+}
+
+
+.OverviewTxt3, .OverviewTxt4 {
+  text-align: left;
+  margin-bottom: 1rem;
+  line-height: 1.6;
+}
+.TextGroup.right {
+  margin-top: 9rem;  /* 왼쪽에만 여백 */
+}
+
+/* 오버뷰 끝 */
+
+/* 백그라운드리서치 */
+#BackGroundResearch {
+  background-color: #F4F8FB;
+}
+
+/* 프라블럼 */
+.ProblemBackGround {
+  position: relative;
+  z-index: 1;
+  margin: 0 5rem;
+  min-height: 300px; /* 최소 높이 줘야 배경 보임 */
+  overflow: hidden;
+}
+
+.ProblemBackGround::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 133rem;
+  background-color: #132D46;
+  border-radius: 70px;
+  z-index: -1;
+}
+
+.BGRTitleWrap h1 {
+  font-family: 'pretendard';
+  font-size: 1.2rem;
+  color: #ffffff;
+  margin-left: 13rem;
+}
+
+.BGRTitleWrap span {
+  font-family: 'pretendard';
+  font-size: 0.8rem;
+  color: #ffffff;
+  margin-left: 13rem;
+  display: block;        /* 블록 요소로 만들어야 정렬 가능 */
+  text-align: left;
+}
+
+
+
+.problem-box1 {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem; /* 텍스트와 이미지 사이 간격 */
+}
+
+.txt-group1 {
+  font-family: 'pretendard';
+  flex-direction: column;
+  flex: 5; /* 텍스트 그룹 너비 자동 */
+  margin-left: 5rem;
+}
+
+.problem01 {
+  width: 600px; /* 이미지 크기 조정 */
+  height: auto;
+  flex-shrink: 0; /* 이미지가 줄어들지 않도록 */
+  margin-right: 5rem;
+}
+
+.problem-box2 {
+  display: flex;
+  flex-direction: row-reverse; /* 요소 순서를 반대로: 텍스트 → 이미지 */
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-top: 5rem;
+  gap: 1rem;
+}
+
+.txt-group2 {
+  font-family: 'pretendard';
+  display: flex;
+  flex-direction: column;
+  flex: 5;
+  margin-right: 5rem;
+  text-align: right;
+}
+
+.problem02 {
+  width: 600px;
+  height: auto;
+  flex-shrink: 0;
+  margin-left: 5rem;
+}
+
+.presona {
+  display: block;       /* inline 기본값을 block으로 바꿔야 margin 적용됨 */
+  margin: 0 auto;       /* 좌우 마진 자동 설정 = 가운데 정렬 */
+  width: 900px;         /* 원하는 너비 유지 */
+  height: 600px;        /* 원하는 높이 유지 */
+}
+
+
+.scroll-container {
+  width: 100%;
+  overflow: hidden;
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 2rem 0;
+}
+
+/* 공통 트랙 - 두 줄 모두 */
+.scroll-track {
+  display: flex;
+  gap: 2rem;
+  width: fit-content;
+  animation: scroll-left 10s linear infinite;
+}
+
+/* 박스 스타일 */
+.box {
+  width: 160px;
+  height: 100px;
+  border-radius: 12px;
+  flex-shrink: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  font-size: 1rem;
+  color: white;
+}
+
+/* 색상 구분 */
+.box1 { background-color: #01C38E; }
+.box2 { background-color: #FF8A65; }
+.box3 { background-color: #4FC3F7; }
+.box4 { background-color: #BA68C8; }
+.box5 { background-color: #F06292; }
+.box6 { background-color: #FFD54F; }
+.box7 { background-color: #81D4FA; }
+.box8 { background-color: #A1887F; }
+
+/* 애니메이션 */
+@keyframes scroll-left {
+  0%   { transform: translateX(100%); }
+  100% { transform: translateX(-100%); }
+}
+
+
+
+
+.fall-group {
+  position: relative;
+   padding-top: 120px;
+  width: 100%;
+  height: 10rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.8rem;
+  overflow: hidden; /* 세로 스크롤 방지 */
+}
+
+.fall-box {
+  position: absolute;
+  background-color: #F4F8FB;
+  color: black;
+  width: 140px;
+  height: 38px;
+  line-height: 38px;
+  text-align: center;
+  border-radius: 8px;
+  font-weight: bold;
+  font-size: 14px;
+  transform: translateY(-300px);
+  transition: transform 0.25s cubic-bezier(0.6, 0.05, 0.9, 0.2), opacity 0.2s ease-out;
+  pointer-events: none;
+  white-space: nowrap;
+}
+
+
+/* 쾅! 떨어진 후 배치된 상태 */
+.fall-box.active {
+  opacity: 1;
+  transform: translate(var(--x), var(--y)) rotate(var(--r));
+}
+
+
+
+
