@@ -318,3 +318,93 @@ window.addEventListener('DOMContentLoaded', () => {
   });
 
   targets.forEach(el => wjatjsobserver.observe(el));
+
+  //
+
+  function typeWriterHTML(el, speed = 30) {
+  const originalHTML = el.getAttribute('data-original') || el.innerHTML;
+  const tempDiv = document.createElement('div');
+  tempDiv.innerHTML = originalHTML;
+
+  const nodes = Array.from(tempDiv.childNodes);
+  el.innerHTML = '';
+  el.style.visibility = 'visible';
+  el.style.opacity = 1;
+
+  function processNode(nodeList, callback) {
+    if (nodeList.length === 0) return callback();
+
+    const node = nodeList.shift();
+
+    if (node.nodeType === Node.TEXT_NODE) {
+      const text = node.textContent;
+      let j = 0;
+      function typeChar() {
+        if (j < text.length) {
+          el.innerHTML += text.charAt(j);
+          j++;
+          setTimeout(typeChar, speed);
+        } else {
+          processNode(nodeList, callback);
+        }
+      }
+      typeChar();
+    } else if (node.nodeType === Node.ELEMENT_NODE && node.tagName === 'BR') {
+      el.innerHTML += '<br>';
+      processNode(nodeList, callback);
+    } else {
+      processNode(nodeList, callback); // 그 외 태그 무시
+    }
+  }
+
+  processNode(nodes, () => {});
+}
+
+// 초기 설정
+document.querySelectorAll('.text1, .text2, .text3, .text4').forEach(el => {
+  el.setAttribute('data-original', el.innerHTML);
+  el.innerHTML = '';
+  el.style.visibility = 'hidden';
+  el.style.opacity = 0;
+});
+
+// 이미지별 감지하고 매칭된 텍스트 실행
+const observerPairs = [
+  { imgClass: '.wjatjs1', textClass: '.text1' },
+  { imgClass: '.wjatjs2', textClass: '.text2' },
+  { imgClass: '.wjatjs3', textClass: '.text3' },
+  { imgClass: '.wjatjs4', textClass: '.text4' },
+];
+
+observerPairs.forEach(pair => {
+  const imgEl = document.querySelector(pair.imgClass);
+  const txtEl = document.querySelector(pair.textClass);
+
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        typeWriterHTML(txtEl, 30);
+      }
+    });
+  }, { threshold: 0.5 });
+
+  io.observe(imgEl);
+});
+
+//
+
+const subDesignEl = document.querySelector('.SubDesignImg');
+
+const subDesignObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      subDesignEl.classList.add('slide-in');
+    } else {
+      subDesignEl.classList.remove('slide-in'); // 다시 나가면 초기화 (반복 효과)
+    }
+  });
+}, {
+  threshold: 0.3,
+});
+
+subDesignObserver.observe(subDesignEl);
