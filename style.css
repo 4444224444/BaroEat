@@ -970,6 +970,10 @@ html, body {
 /* 디자인시스템끝!!!! */
 
 #Service-main {
+  display: flex;
+  justify-content: center;
+  position: relative;
+
   width: 100vw;
   background-image: url('img/ServiceBackground.png'); /* 경로 정확히 */
   background-size: cover;
@@ -981,16 +985,21 @@ html, body {
   padding-bottom: 3rem;
 }
 
+.ServiceWrap {
+  width: 100%;
+  max-width: 1200px;            /* 원하는 최대 너비로 제한 */
+}
+
 .ServiceTitleBox {
   position: relative;
   display: flex;
-  padding: 7rem 11rem;
+  margin-top: 5rem;
+  margin-bottom: 3rem;
 }
 
 
 .TriangleBehind {
   position: absolute;
-  margin-left: 11rem;
   top: calc(50% - 20px); 
   left: calc(0% - 20px);
   width: 2rem;
@@ -1008,7 +1017,7 @@ html, body {
 .Service1 {
 display: flex;
 gap: 11rem;
-margin: 0 11rem;
+
 }
 
 .Service1Text {
@@ -1082,7 +1091,6 @@ margin: 0 11rem;
 .Service2Text {
   color: #FFFFFF;
   font-family: 'pretendard';
-  margin: 0 11rem;
 }
 
 .Service2Text .title {
@@ -1104,24 +1112,7 @@ margin: 0 11rem;
   font-weight: 200;
 }
 
-.Service2Img {
-  width: 100vw; /* 전체 화면 너비 */
-  padding: 0;
-  margin: 0;
-  display: flex;
-  justify-content: center;
-  gap: 2rem;
-  flex-wrap: wrap;
-  box-sizing: border-box;
-  margin-top: 5rem;
-  margin-bottom: 5rem;
-}
 
-.SignUpImg {
-  width: 90rem;
-  height: auto;
-  display: block;
-}
 
 @keyframes revealFromLeft {
   0% {
