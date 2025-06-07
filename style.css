@@ -722,7 +722,7 @@ html, body {
   display: inline-block; /* 또는 flex, block 등 */
   z-index: 2; /* 텍스트는 위 */
   width: 100%;
-  max-width: 1200px;  
+  
 }
 
 .DesignSystemTitleBox {
@@ -787,7 +787,7 @@ html, body {
 
 .AppiconContainer p {
   font-size: 1rem;
-  color: #01C38E;
+  color: #8B8B8B;
   margin-top: 3rem;
   font-weight: 500;
 }
