@@ -579,10 +579,25 @@ html, body {
 
 /* 애니메이션 */
 @keyframes scroll-left {
-  0%   { transform: translateX(100%); }
-  100% { transform: translateX(-100%); }
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); } /* 복제된 만큼만 이동 */
 }
 
+.scroll-track {
+  display: flex;
+  gap: 1.5rem;
+  width: max-content;
+}
+
+.scroll-track.row1 {
+  animation: scroll-left 40s linear infinite;
+  animation-delay: 0s;
+}
+
+.scroll-track.row2 {
+  animation: scroll-left 40s linear infinite;
+  animation-delay: -5s;
+}
 
 /* 유저피드백 끝!!!! */
 /*프로젝트골시작!!!! */
@@ -713,8 +728,8 @@ html, body {
 
 .LogoApp {
   display: flex;
-  justify-content: flex-start;  
-  align-items: flex-start;
+  justify-content: center;
+  align-items: center;
   gap: 3rem;                 /* 두 컨테이너 사이 간격 */
   flex-wrap: wrap;          /* 반응형 줄바꿈 허용 */
   font-family: 'pretendard';
@@ -723,6 +738,7 @@ html, body {
 .LogotypeContainer {
   display: flex;
   flex-direction: column;
+  align-items: center;
   justify-content: space-between; /* 또는 flex-start + margin-top: auto 사용 */
   height: 100%;
 }
@@ -847,6 +863,13 @@ html, body {
   font-weight: 500;
 }
 
+.Medium {
+  display: inline-block;
+  white-space: nowrap;
+  opacity: 0.2; /* 처음에 살짝 보이게 */
+  transition: opacity 0.3s ease;
+}
+
 .SemiBoldLabel {
   display: flex;
   align-items: center;   /* ✅ 세로 중앙 정렬 */
@@ -861,8 +884,16 @@ html, body {
   font-weight: 600;
 }
 
+.SemiBold {
+  display: inline-block;
+  white-space: nowrap;
+  opacity: 0.2; /* 처음에 살짝 보이게 */
+  transition: opacity 0.3s ease;
+}
+
 .ColorWrapper {
   display: flex;
+  align-items: center;
   justify-content: center;  /* ✅ 가로 중앙 정렬 */
   width: 100%;
 }
@@ -895,10 +926,11 @@ html, body {
 
 .AIImageWrapper {
   display: flex;
+  align-items: center;
   justify-content: center;  /* ✅ 가로 중앙 정렬 */
   width: 100%;
   margin-top: 3rem;
-  margin-bottom: 5rem;
+  margin-bottom: 5rem; 
 }
 
 .AIrnwheh {
@@ -919,23 +951,26 @@ html, body {
 
 #Service-main {
   width: 100vw;
-  padding: 7rem 11rem;
   background-image: url('img/ServiceBackground.png'); /* 경로 정확히 */
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
 
   min-height: 100vh; /* or 적당한 높이 */
+
+  padding-bottom: 3rem;
 }
 
 .ServiceTitleBox {
   position: relative;
   display: flex;
+  padding: 7rem 11rem;
 }
 
 
 .TriangleBehind {
   position: absolute;
+  margin-left: 11rem;
   top: calc(50% - 20px); 
   left: calc(0% - 20px);
   width: 2rem;
@@ -953,18 +988,42 @@ html, body {
 .Service1 {
 display: flex;
 gap: 11rem;
+margin: 0 11rem;
 }
 
 .Service1Text {
   margin-top: 10rem;
 }
 
+@keyframes slideInFromLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.slide-in {
+  animation: slideInFromLeft 0.8s ease-out forwards;
+  opacity: 1;
+}
+
+.hidden {
+  opacity: 0;
+  transform: translateX(-50px);
+}
+
+
+
 .Service1Text h1 {
   font-family: 'pretendard';
   font-weight: 700;
   font-size: 2.5rem;
   color: #ffffff;
-    margin-bottom: 0.5rem;
+  margin-bottom: 0.5rem;
 }
 
 .Service1Text p {
@@ -976,4 +1035,250 @@ gap: 11rem;
 
 .ServiceMain{
   width: 35rem;
+}
+
+@keyframes slideInFromRight {
+  0% {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.slide-in-right {
+  animation: slideInFromRight 0.8s ease-out forwards;
+  opacity: 1;
+}
+
+.hidden-right {
+  opacity: 0;
+  transform: translateX(50px);
+}
+
+
+.Service2Text {
+  color: #FFFFFF;
+  font-family: 'pretendard';
+  margin: 0 11rem;
+}
+
+.Service2Text .title {
+  font-size: 1rem;
+  font-weight: 500;
+  margin-top: 12rem;
+  margin-bottom: 0rem;
+}
+
+.Service2Text .content1 {
+  font-size: 1.8rem;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+
+.Service2Text .content2 {
+  font-size: 1rem;
+  line-height: 1.6;
+  font-weight: 200;
+}
+
+.Service2Img {
+  width: 100vw; /* 전체 화면 너비 */
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+  box-sizing: border-box;
+  margin-top: 5rem;
+  margin-bottom: 5rem;
+}
+
+.SignUpImg {
+  width: 90rem;
+  height: auto;
+  display: block;
+}
+
+@keyframes revealFromLeft {
+  0% {
+    clip-path: inset(0 100% 0 0); /* 왼쪽부터 점점 열림 */
+    opacity: 0;
+  }
+  100% {
+    clip-path: inset(0 0 0 0);   /* 전체 다 보임 */
+    opacity: 1;
+  }
+}
+
+.reveal-left {
+  animation: revealFromLeft 1.2s ease-out forwards;
+  opacity: 1;
+  clip-path: inset(0 100% 0 0); /* 시작 상태를 강제 고정 */
+}
+
+.hidden-reveal {
+  opacity: 0;
+  clip-path: inset(0 100% 0 0);
+}
+
+
+#HealthAnalysisPage {
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+.HealthBackgroundBox {
+  display: flex;                    /* 가로 정렬 시작 */
+  justify-content: space-between;  /* 양쪽 정렬 */
+  align-items: center;             /* 세로 중앙 정렬 */
+  gap: 2rem;                        /* 텍스트-이미지 간 간격 */
+  background-color: #132D46;
+  border-bottom-left-radius: 60px;
+  border-bottom-right-radius: 60px;
+  width: 100%;
+  padding: 5rem 0;
+}
+
+.Service3Text {
+  flex: 1;
+  font-family: 'pretendard';
+  color: #ffffff;
+  margin-left: 11rem;
+}
+
+.Service3Text .title {
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin-bottom: 0rem;
+}
+
+.Service3Text .content1 {
+  font-weight: 600;
+  font-size: 2.5rem;
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.Service3Text .content2 {
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.Service3Img {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.HealthImg {
+  width: 100%;
+  max-width: 400px; /* 최대 너비 제한 */
+  height: auto;
+  object-fit: contain;
+  margin-right: 11rem;
+}
+
+.Service4Text {
+  flex: 1;
+  font-family: 'pretendard';
+  color: #1A1E29;
+  margin-top: 10rem;
+  margin-left: 11rem;
+}
+
+.Service4Text .title {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 0rem;
+}
+
+.Service4Text .content1 {
+  font-weight: 600;
+  font-size: 2.5rem;
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.Service4Text .content2 {
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.ServiceImg4 {
+  position: relative;
+  margin-top: 4rem;
+}
+
+.MainDesignWrapper {
+  position: relative;
+  width: 800px; /* 원하는 크기 */
+  height: auto;
+  margin-left: 11rem;
+}
+
+.MainDesignImg {
+  width: 100%;
+  display: block;
+}
+
+/* wjatjs 이미지들: MainDesignImg 기준으로 고정 */
+.wjatjs1,
+.wjatjs2,
+.wjatjs3 {
+  position: absolute;
+  width: 100px; /* 필요시 크기 조정 */
+  height: auto;
+}
+
+.wjatjs4
+{
+  position: absolute;
+  width: 250px; /* 필요시 크기 조정 */
+  height: auto;
+}
+
+/* 예시 좌표 (MainDesignImg 안에서의 상대 좌표) */
+.wjatjs1 {
+  top: 350px;
+  left: 350px;
+}
+
+.wjatjs2 {
+  top: 975px;
+  left: 715px;
+}
+
+.wjatjs3 {
+  top: 1135px;
+  left: 353px;
+}
+
+.wjatjs4 {
+  top: 1590px;
+  left: 450px;
+}
+
+.Service4Content {
+  position: relative; /* 기준점 */
+  z-index: 1;
+}
+
+.Service4Content::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;                         /* 중앙 기준 */
+  transform: translateX(-50%);       /* 중앙 정렬 */
+  
+  width: 90%;                        /* 원하는 너비 (예: 80%) */
+  height: 80%;                      /* 콘텐츠 높이만큼 */
+  background-color: #01C38E;         /* 초록 배경 */
+  border-radius: 70px;              /* 둥근 모서리 */
+  margin-top: 35rem;
+  z-index: -1;                       /* 텍스트/이미지 뒤 */
 }
