@@ -709,12 +709,20 @@ html, body {
 
 /* 디자인시스템시작!!!!!! */
 
+#DesignSystem {
+  display: flex;
+  justify-content: center;       /* 상하 여백 */
+  box-sizing: border-box;
+}
+
 .DesignSystemWrap {
   margin: 8rem 11rem;
   position: relative;
   justify-content: center;
   display: inline-block; /* 또는 flex, block 등 */
   z-index: 2; /* 텍스트는 위 */
+  width: 100%;
+  max-width: 1200px;  
 }
 
 .DesignSystemTitleBox {
