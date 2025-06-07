@@ -300,3 +300,21 @@ window.addEventListener('DOMContentLoaded', () => {
   window.addEventListener('scroll', handleScroll);
   handleScroll(); // 첫 로딩 시 체크
 });
+
+
+
+  const targets = document.querySelectorAll('.scroll-animate');
+
+  const wjatjsobserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('active');
+      } else {
+        entry.target.classList.remove('active'); // 반복해서 스르륵 등장
+      }
+    });
+  }, {
+    threshold: 0.1,
+  });
+
+  targets.forEach(el => wjatjsobserver.observe(el));

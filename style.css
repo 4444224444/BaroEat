@@ -1136,7 +1136,7 @@ margin: 0 11rem;
   display: flex;                    /* 가로 정렬 시작 */
   justify-content: space-between;  /* 양쪽 정렬 */
   align-items: center;             /* 세로 중앙 정렬 */
-  gap: 2rem;                        /* 텍스트-이미지 간 간격 */
+  gap: 3rem;                        /* 텍스트-이미지 간 간격 */
   background-color: #132D46;
   border-bottom-left-radius: 60px;
   border-bottom-right-radius: 60px;
@@ -1177,10 +1177,14 @@ margin: 0 11rem;
 
 .HealthImg {
   width: 100%;
-  max-width: 400px; /* 최대 너비 제한 */
+  max-width: 450px; /* 최대 너비 제한 */
   height: auto;
   object-fit: contain;
   margin-right: 11rem;
+}
+
+#MainDesign {
+  padding-bottom: 15rem;
 }
 
 .Service4Text {
@@ -1209,21 +1213,44 @@ margin: 0 11rem;
   line-height: 1.6;
 }
 
-.ServiceImg4 {
-  position: relative;
-  margin-top: 4rem;
-}
-
 .MainDesignWrapper {
   position: relative;
-  width: 800px; /* 원하는 크기 */
-  height: auto;
-  margin-left: 11rem;
+  display: flex;            /* 가로 정렬 */
+  align-items: center;      /* 수직 정렬 */
+  gap: 2rem;                /* 이미지 간 간격 */
+  margin-left: 10rem;
+  margin-top: 4rem;
+  width: 100%;              /* 최대한 늘어남 */
+  max-width: 1200px;        /* 전체 영역 제한 */
 }
 
 .MainDesignImg {
-  width: 100%;
+  width: 900px;             /* 너비 고정 */
+  height: auto;
   display: block;
+  flex-shrink: 0;           /* 줄어들지 않도록 */
+}
+
+.SubDesignImg {
+  position: absolute;
+  top: 1580px;     /* 원하는 위치로 조절 */
+  left: 735px;   /* MainDesignImg 너비 이후 위치 */
+  width: 450px;
+  height: auto;
+}
+
+.subcontent {
+  display: flex;
+  flex-direction: column;  /* 세로 정렬 */
+  align-items: center;     /* 가운데 정렬 (옵션) */
+  gap: 2rem;               /* 요소 간 간격 (옵션) */
+}
+
+.subcontent .text4 {
+  position: absolute;
+  top: 1520px;     
+  left: 830px;  
+  color: #FFFFFF;
 }
 
 /* wjatjs 이미지들: MainDesignImg 기준으로 고정 */
@@ -1244,24 +1271,74 @@ margin: 0 11rem;
 
 /* 예시 좌표 (MainDesignImg 안에서의 상대 좌표) */
 .wjatjs1 {
-  top: 350px;
-  left: 350px;
+  top: 400px;
+  left: 395px;
+}
+
+.text1 {
+  position: absolute;
+  top: 370px;   /* wjatjs1 위치와 동일하게 수치 맞추기 */
+  left: 520px;  /* 원하는 위치 */
+  max-width: 300px;
+  height: auto;
+  font-size: 1rem;
+  font-family: 'pretendard';
+  font-weight: 400;
 }
 
 .wjatjs2 {
-  top: 975px;
-  left: 715px;
+  top: 1100px;
+  left: 800px;
+}
+
+.text2 {
+  position: absolute;
+  top: 1105px;   /* wjatjs1 위치와 동일하게 수치 맞추기 */
+  left: 930px;  /* 원하는 위치 */
+  max-width: 300px;
+  height: auto;
+  font-size: 1rem;
+  font-family: 'pretendard';
+  font-weight: 400;
+  color:#FFFFFF;
 }
 
 .wjatjs3 {
-  top: 1135px;
-  left: 353px;
+  top: 1280px;
+  left: 400px;
 }
 
-.wjatjs4 {
-  top: 1590px;
-  left: 450px;
+.text3 {
+  position: absolute;
+  top: 1250px;   /* wjatjs1 위치와 동일하게 수치 맞추기 */
+  left: 520px;  /* 원하는 위치 */
+  max-width: 400px;
+  height: auto;
+  font-size: 1rem;
+  font-family: 'pretendard';
+  font-weight: 400;
+  color:#FFFFFF;
 }
+
+
+.wjatjs4 {
+  top: 1790px;
+  left: 510px;
+}
+
+.scroll-animate {
+  opacity: 0;
+  transform: translateX(-40px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.scroll-animate.active {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+
+
 
 .Service4Content {
   position: relative; /* 기준점 */
@@ -1275,10 +1352,123 @@ margin: 0 11rem;
   left: 50%;                         /* 중앙 기준 */
   transform: translateX(-50%);       /* 중앙 정렬 */
   
-  width: 90%;                        /* 원하는 너비 (예: 80%) */
-  height: 80%;                      /* 콘텐츠 높이만큼 */
+  width: 90%;                       /* 원하는 너비 (예: 80%) */
+  height: 93%;                      /* 콘텐츠 높이만큼 */
   background-color: #01C38E;         /* 초록 배경 */
   border-radius: 70px;              /* 둥근 모서리 */
-  margin-top: 35rem;
+  margin-top: 42rem;
   z-index: -1;                       /* 텍스트/이미지 뒤 */
+}
+
+#Service5 {
+  display: flex;
+  align-items: center;         /* 세로 중앙 정렬 */
+  justify-content: space-between; /* 필요 시 간격 조절 가능 */
+  background: linear-gradient(to bottom, #F4F8FB, #01C38E); /* 위에서 아래로 그라데이션 */
+  flex-wrap: wrap;             /* 반응형 대응 */
+  gap: 2rem;
+  margin-top: 25rem;
+}
+
+.Service5Text {
+  flex: 1;
+  font-family: 'Pretendard';
+  color: #333;
+  min-width: 300px;
+}
+
+
+.AIvoiceImg {
+  flex: 1;
+  max-width: 450px;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  margin-right: 11rem;
+  margin-bottom: 4rem;
+}
+
+.Service5Text {
+  flex: 1;
+  font-family: 'pretendard';
+  color: #1A1E29;
+  margin-left: 11rem;
+}
+
+.Service5Text .title {
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin-bottom: 0rem;
+}
+
+.Service5Text .content1 {
+  font-weight: 600;
+  font-size: 2.5rem;
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.Service5Text .content2 {
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+#Service6 {
+  position: relative;         /* 배경 위치 기준을 잡기 위해 필요 */
+  padding: 5rem 2rem;
+  z-index: 0;                 /* 기본 z-index */
+  background-color: #01C38E;
+}
+
+.Service6Background {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);  /* 중앙 정렬 */
+  width: 100%;
+  height: 100%;
+  background-color: #F4F8FB;     /* 원하는 배경색 */
+  border-radius: 70px 70px 0 0;  /* 좌상 우상 둥글게 */
+  z-index: -1;                  /* 텍스트/이미지 뒤로 */
+}
+
+.Service6Text {
+  flex: 1;
+  font-family: 'pretendard';
+  color: #1A1E29;
+  text-align: center;
+  margin-top: 3rem;
+}
+
+.Service6Text .title {
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin-bottom: 0rem;
+}
+
+.Service6Text .content1 {
+  font-weight: 600;
+  font-size: 2.5rem;
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.Service6Text .content2 {
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.Service6Img {
+  display: flex;
+  justify-content: center;    /* 가로 중앙 정렬 */
+  align-items: flex-start;    /* 위쪽 정렬 (필요 시 center로 변경 가능) */
+  gap: 2rem;                  /* 이미지 간 간격 */
+  margin-top: 5rem;
+}
+
+.Order1Img,
+.Order2Img {
+  width: 600px;               /* 원하는 이미지 너비 */
+  height: auto;
+  object-fit: contain;
 }
