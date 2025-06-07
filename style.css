@@ -747,7 +747,8 @@ html, body {
 .LogoApp {
   display: flex;
   justify-content: center;
-  gap: 3rem;                 /* 두 컨테이너 사이 간격 */
+  margin: 0 auto;
+  gap: 7rem;                 /* 두 컨테이너 사이 간격 */
   flex-wrap: wrap;          /* 반응형 줄바꿈 허용 */
   font-family: 'pretendard';
 }
@@ -755,7 +756,7 @@ html, body {
 .LogotypeContainer {
   display: flex;
   flex-direction: column;
-  justify-content: space-between; /* 또는 flex-start + margin-top: auto 사용 */
+  justify-content: center;
   height: 100%;
 }
 
@@ -781,7 +782,7 @@ html, body {
 .AppiconContainer {
   display: flex;
   flex-direction: column;      /* 수직 정렬 */
-  justify-content: space-between;
+  justify-content: flex-start;
   height: 100%;
 }
 
@@ -812,24 +813,21 @@ html, body {
   height: auto;
 }
 
-.LogotypeContainer,
-.AppiconContainer {
-  flex: 1;
-  min-width: 30rem; /* 반응형 대응 */
-}
+
 /*타이포 컬러 시작!!!*/
 
 .TypoContainer {
   display: flex;
   font-family: 'pretendard';
   justify-content: center; 
-  gap: 6rem;  
+  gap: 7rem;  
 }
 
 .TypoTitle{
   color: #8B8B8B;
   font-weight: 500;
   margin-top: 10rem;
+    justify-content: flex-start; 
 }
 
 .Font {
@@ -838,10 +836,17 @@ html, body {
   margin-bottom: 2rem;
 }
 
+.Typo1 {
+  justify-content: flex-start; 
+}
 
 .Typo1 p {
   font-size: 1.8rem;
   margin-top: 0rem;
+}
+
+.Typo2 {
+  justify-content: flex-start;
 }
 
 .RegularLabel {
@@ -971,23 +976,23 @@ html, body {
 
 #Service-main {
   display: flex;
-  justify-content: center;
   position: relative;
 
-  width: 100vw;
+  width: 100%;
   background-image: url('img/ServiceBackground.png'); /* 경로 정확히 */
   background-size: cover;
-  background-position: center;
+
   background-repeat: no-repeat;
 
   min-height: 100vh; /* or 적당한 높이 */
 
-  padding-bottom: 3rem;
+  padding-bottom: 0rem;
 }
 
 .ServiceWrap {
+
   width: 100%;
-  max-width: 1200px;            /* 원하는 최대 너비로 제한 */
+  max-width: 100vw;           /* 원하는 최대 너비로 제한 */
 }
 
 .ServiceTitleBox {
@@ -995,6 +1000,7 @@ html, body {
   display: flex;
   margin-top: 5rem;
   margin-bottom: 3rem;
+  margin-left: 11rem;
 }
 
 
@@ -1017,11 +1023,12 @@ html, body {
 .Service1 {
 display: flex;
 gap: 11rem;
-
+justify-content: center;
 }
 
 .Service1Text {
   margin-top: 10rem;
+
 }
 
 @keyframes slideInFromLeft {
@@ -1044,7 +1051,6 @@ gap: 11rem;
   opacity: 0;
   transform: translateX(-50px);
 }
-
 
 
 .Service1Text h1 {
@@ -1087,10 +1093,10 @@ gap: 11rem;
   transform: translateX(50px);
 }
 
-
 .Service2Text {
   color: #FFFFFF;
   font-family: 'pretendard';
+  margin: 0 11rem;
 }
 
 .Service2Text .title {
@@ -1112,7 +1118,28 @@ gap: 11rem;
   font-weight: 200;
 }
 
+.Service2Img {
+  position: relative;
+  min-height: 800px;
+  width: 100%;
+  justify-content: center;
+}
 
+.SignUpImg {
+  position: absolute;   /* 흐름에서 분리 */
+  
+  top: 0;
+  right: 0;
+  left: 50%;
+  transform: translateX(-50%);
+
+  width: 1400px;        /* 크기 조절 */
+  height: auto;
+
+  margin: 0 !important;     /* 외부 마진 무시 */
+  padding: 0;
+  z-index: 3;
+}
 
 @keyframes revealFromLeft {
   0% {
@@ -1152,7 +1179,7 @@ gap: 11rem;
   border-bottom-left-radius: 60px;
   border-bottom-right-radius: 60px;
   width: 100%;
-  padding: 5rem 0;
+  padding: 9rem 0;
 }
 
 .Service3Text {
