@@ -391,7 +391,7 @@ observerPairs.forEach(pair => {
   io.observe(imgEl);
 });
 
-//
+
 
 const subDesignEl = document.querySelector('.SubDesignImg');
 
