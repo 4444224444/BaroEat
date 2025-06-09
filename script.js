@@ -84,91 +84,164 @@ problems.forEach(el => problemobserver.observe(el));
 
 // 타자기효과
 
- document.addEventListener("DOMContentLoaded", () => {
-    const label = document.querySelector(".RegularLabel");
-    const span = label.querySelector(".Regular");
+document.addEventListener("DOMContentLoaded", () => {
+  const label = document.querySelector(".RegularLabel");
+  const span = label.querySelector(".Regular");
 
-    let typed = false;
+  let typed = false;
+  label.style.cursor = "pointer";
 
-    label.style.cursor = "pointer";
+  const originalText = span.textContent;
 
-    label.addEventListener("click", () => {
-      if (typed) return; // 중복 방지
-      typed = true;
+  // 흐린 배경 텍스트 + 선명한 타자기 텍스트 레이어
+  span.innerHTML = `
+    <span class="ghost-text" style="
+      opacity: 0.1;
+      color: black;
+      position: relative;
+      z-index: 0;
+    ">${originalText}</span>
+    <span class="typewriter-text" style="
+      position: absolute;
+      top: 0;
+      left: 0;
+      color: #1A1E29;
+      opacity: 1;
+      z-index: 1;
+      pointer-events: none;
+    "></span>
+  `;
 
-      const text = span.textContent;
-      span.textContent = "";
-      span.style.opacity = "1"; // 출력 시작하면서 완전히 보이게
+  // 부모에 상대 위치 부여해서 정확히 겹치게
+  span.style.position = "relative";
+  span.style.display = "inline-block";
 
-      let i = 0;
-      const interval = setInterval(() => {
-        if (i < text.length) {
-          span.textContent += text[i];
-          i++;
-        } else {
-          clearInterval(interval);
-        }
-      }, 80); // 속도 조절 가능
-    });
+  const typingSpan = span.querySelector(".typewriter-text");
+
+  label.addEventListener("click", () => {
+    if (typed) return;
+    typed = true;
+
+    let i = 0;
+    typingSpan.textContent = "";
+
+    const interval = setInterval(() => {
+      if (i < originalText.length) {
+        typingSpan.textContent += originalText[i];
+        i++;
+      } else {
+        clearInterval(interval);
+      }
+    }, 80);
   });
+});
 
   
- document.addEventListener("DOMContentLoaded", () => {
-    const label = document.querySelector(".MediumLabel");
-    const span = label.querySelector(".Medium");
+document.addEventListener("DOMContentLoaded", () => {
+  const label = document.querySelector(".MediumLabel");
+  const span = label.querySelector(".Medium");
 
-    let typed = false;
+  let typed = false;
+  label.style.cursor = "pointer";
 
-    label.style.cursor = "pointer";
+  const originalText = span.textContent;
 
-    label.addEventListener("click", () => {
-      if (typed) return; // 중복 방지
-      typed = true;
+  // 흐린 배경 텍스트 + 선명한 타자기 텍스트 레이어
+  span.innerHTML = `
+    <span class="ghost-text" style="
+      opacity: 0.1;
+      color: black;
+      position: relative;
+      z-index: 0;
+    ">${originalText}</span>
+    <span class="typewriter-text" style="
+      position: absolute;
+      top: 0;
+      left: 0;
+      color: #1A1E29;
+      opacity: 1;
+      z-index: 1;
+      pointer-events: none;
+    "></span>
+  `;
 
-      const text = span.textContent;
-      span.textContent = "";
-      span.style.opacity = "1"; // 출력 시작하면서 완전히 보이게
+  // 부모에 상대 위치 부여해서 정확히 겹치게
+  span.style.position = "relative";
+  span.style.display = "inline-block";
 
-      let i = 0;
-      const interval = setInterval(() => {
-        if (i < text.length) {
-          span.textContent += text[i];
-          i++;
-        } else {
-          clearInterval(interval);
-        }
-      }, 80); // 속도 조절 가능
-    });
+  const typingSpan = span.querySelector(".typewriter-text");
+
+  label.addEventListener("click", () => {
+    if (typed) return;
+    typed = true;
+
+    let i = 0;
+    typingSpan.textContent = "";
+
+    const interval = setInterval(() => {
+      if (i < originalText.length) {
+        typingSpan.textContent += originalText[i];
+        i++;
+      } else {
+        clearInterval(interval);
+      }
+    }, 80);
   });
+});
 
   
- document.addEventListener("DOMContentLoaded", () => {
-    const label = document.querySelector(".SemiBoldLabel");
-    const span = label.querySelector(".SemiBold");
+document.addEventListener("DOMContentLoaded", () => {
+  const label = document.querySelector(".SemiBoldLabel");
+  const span = label.querySelector(".SemiBold");
 
-    let typed = false;
+  let typed = false;
+  label.style.cursor = "pointer";
 
-    label.style.cursor = "pointer";
+  const originalText = span.textContent;
 
-    label.addEventListener("click", () => {
-      if (typed) return; // 중복 방지
-      typed = true;
+  // 흐린 배경 텍스트 + 선명한 타자기 텍스트 레이어
+  span.innerHTML = `
+    <span class="ghost-text" style="
+      opacity: 0.1;
+      color: black;
+      position: relative;
+      z-index: 0;
+    ">${originalText}</span>
+    <span class="typewriter-text" style="
+      position: absolute;
+      top: 0;
+      left: 0;
+      color: #1A1E29;
+      opacity: 1;
+      z-index: 1;
+      pointer-events: none;
+    "></span>
+  `;
 
-      const text = span.textContent;
-      span.textContent = "";
-      span.style.opacity = "1"; // 출력 시작하면서 완전히 보이게
+  // 부모에 상대 위치 부여해서 정확히 겹치게
+  span.style.position = "relative";
+  span.style.display = "inline-block";
 
-      let i = 0;
-      const interval = setInterval(() => {
-        if (i < text.length) {
-          span.textContent += text[i];
-          i++;
-        } else {
-          clearInterval(interval);
-        }
-      }, 80); // 속도 조절 가능
-    });
+  const typingSpan = span.querySelector(".typewriter-text");
+
+  label.addEventListener("click", () => {
+    if (typed) return;
+    typed = true;
+
+    let i = 0;
+    typingSpan.textContent = "";
+
+    const interval = setInterval(() => {
+      if (i < originalText.length) {
+        typingSpan.textContent += originalText[i];
+        i++;
+      } else {
+        clearInterval(interval);
+      }
+    }, 80);
   });
+});
+
 
   //비디오
     document.addEventListener("DOMContentLoaded", () => {
