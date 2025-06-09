@@ -1457,12 +1457,14 @@ justify-content: center;
 #Service5 {
   position: relative;
   width: 100%;
+  height: 150rem;
   overflow: hidden;
 }
 
 /* ✅ 배경 이미지 부모 */
 .Service5Background {
   position: relative;
+
   z-index: 0;
 }
 
@@ -1480,7 +1482,7 @@ justify-content: center;
   top: 0;
   left: 0;
   width: 100%;
-  height: 100%;
+  height: 120rem;
   z-index: 1;
   display: flex;
   pointer-events: none; /* 필요 시 클릭 비활성화 */
@@ -1493,7 +1495,7 @@ justify-content: center;
   top: 0;
   left: 0;
   width: 100%;
-  height: 100%;
+  height: 15rem;
   z-index: 1;
   pointer-events: none;  
   margin-left: 11rem;    
@@ -1562,18 +1564,7 @@ justify-content: center;
   width: 600px;
   position: relative;
   height: 250px;
-}
-
-.Container2 {
-  width: 300px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.jumun {
-  max-width: 100%;
-  height: auto;
+  padding-left: 4rem; 
 }
 
 .Step1Circle {
@@ -1581,8 +1572,8 @@ justify-content: center;
   width: 80px;
   height: auto;
   top: 40%;
-  left: 50%;
-  transform: translateX(-520%);
+  left: 55%;
+  transform: translateX(-500%);
 }
 
 /* 나머지: 기준에서 상대 거리만큼 */
@@ -1590,36 +1581,36 @@ justify-content: center;
   position: absolute;
   width: 80px;
   height: auto;
-  top: 0;
-  left: calc(50% + 100px);
-  transform: translateX(-50%);
+  top: 40%;
+  left: calc(50% + 340px);
+  transform: translateX(-500%);
 }
 
 .Step3Circle {
   position: absolute;
   width: 80px;
   height: auto;
-  top: 0;
-  left: calc(50% + 200px);
-  transform: translateX(-50%);
+  top: 40%;
+  left: calc(50% + 640px);
+  transform: translateX(-500%);
 }
 
 .Step4Circle {
   position: absolute;
   width: 80px;
   height: auto;
-  top: 0;
-  left: calc(50% + 300px);
-  transform: translateX(-50%);
+  top: 320%;
+  left: calc(50% + 340px);
+  transform: translateX(-500%);
 }
 
 .Step5Circle {
   position: absolute;
   width: 80px;
   height: auto;
-  top: 0;
-  left: calc(50% + 400px);
-  transform: translateX(-50%);
+  top: 320%;
+  left: calc(50% + 640px);
+  transform: translateX(-500%);
 }
 
 
@@ -1652,28 +1643,53 @@ justify-content: center;
 
 .StepImg img {
   position: absolute;
-  width: 350px;
+  width: 320px;
   height: auto;
   transform: translateY(0%);
   transform: translateX(0%);
 }
 
-.Step1 { top: 200px; left: -250px; }
-.Step2 { top: 200px; left: 90px; }
-.Step3 { top: 200px; left: 430px; }
-.Step4 { top: 200px; left: -250px; }
-.Step5 { top: 200px; left: -250px; }
+.StepImg .Orpagewjatjs {
+  position: absolute;
+  width: 20px;
+  height: auto;
+  transform: translateY(0%);
+  transform: translateX(0%);
+
+}
+
+.Step1 { top: 180px; left: -220px; }
+.Step2 { top: 180px; left: 90px; }
+.Step3 { top: 180px; left: 390px; }
+.Step4 { top: 900px; left: 90px; }
+.Step5 { top: 900px; left: 390px; }
+.Orpagewjatjs { top: 1688px; left: 510px;}
 
 /* 오른쪽 주문 이미지 */
+
 .Container2 {
+  width: 300px;
   display: flex;
+  justify-content: center;
   align-items: center;
+  padding-right: 8rem; 
 }
 
 .jumun {
-  width: 300px;
+  max-width: 100%;
+  height: auto;
+  margin-top: 31rem;
+}
+
+
+.jumunImg img {
+  position: absolute;
+  width: 420px;
   height: auto;
 }
+
+
+
 
 /* 서비스 5 끝!! */
 
