@@ -1457,22 +1457,25 @@ justify-content: center;
 #Service5 {
   position: relative;
   width: 100%;
-  height: 150rem;
+  height: 128.5rem;
   overflow: hidden;
 }
 
-/* ✅ 배경 이미지 부모 */
 .Service5Background {
   position: relative;
-
-  z-index: 0;
+  width: 100%;
+  min-height: 50rem;  /* ✅ 고정이 아니라 최소 높이 */
+  display: flex;
+  justify-content: center;
+   background-size: contain; 
+  align-items: center;
+  overflow: visible; /* ✅ 짤림 방지 */
 }
 
-/* ✅ 배경 이미지 자체 */
 .Service5BG {
   max-width: 100%;
-  width: 100vw; /* 필요 시 조절 */
   height: auto;
+  object-fit: contain; /* ✅ 비율 유지 + 잘림 방지 */
   display: block;
 }
 
@@ -1482,7 +1485,6 @@ justify-content: center;
   top: 0;
   left: 0;
   width: 100%;
-  height: 120rem;
   z-index: 1;
   display: flex;
   pointer-events: none; /* 필요 시 클릭 비활성화 */
@@ -1499,7 +1501,7 @@ justify-content: center;
   z-index: 1;
   pointer-events: none;  
   margin-left: 11rem;    
-  margin-top: 8rem;
+  margin-top: 10rem;
 }
 
 .Service5Content {
@@ -1564,7 +1566,7 @@ justify-content: center;
   width: 600px;
   position: relative;
   height: 250px;
-  padding-left: 4rem; 
+  padding-left: 6rem; 
 }
 
 .Step1Circle {
@@ -1572,7 +1574,7 @@ justify-content: center;
   width: 80px;
   height: auto;
   top: 40%;
-  left: 55%;
+  left: 60%;
   transform: translateX(-500%);
 }
 
@@ -1582,7 +1584,7 @@ justify-content: center;
   width: 80px;
   height: auto;
   top: 40%;
-  left: calc(50% + 340px);
+  left: calc(50% + 380px);
   transform: translateX(-500%);
 }
 
@@ -1591,7 +1593,7 @@ justify-content: center;
   width: 80px;
   height: auto;
   top: 40%;
-  left: calc(50% + 640px);
+  left: calc(50% + 680px);
   transform: translateX(-500%);
 }
 
@@ -1600,7 +1602,7 @@ justify-content: center;
   width: 80px;
   height: auto;
   top: 320%;
-  left: calc(50% + 340px);
+  left: calc(50% + 380px);
   transform: translateX(-500%);
 }
 
@@ -1609,35 +1611,17 @@ justify-content: center;
   width: 80px;
   height: auto;
   top: 320%;
-  left: calc(50% + 640px);
+  left: calc(50% + 680px);
   transform: translateX(-500%);
 }
 
 
-/* Borderlines는 StepCircle보다 뒤에 깔림 */
-.borderline1, .borderline2 {
-  position: absolute;
-  top: 35px;  /* 원 중앙에 맞게 */
-  height: 4px;
-  background-color: #ccc;
-  z-index: 1; /* StepCircle보다 아래 */
-}
-
-.borderline1 {
-  left: 0;
-  width: 200px;  /* Step1 → Step3 */
-}
-
-.borderline2 {
-  left: 200px;
-  width: 200px;  /* Step3 → Step5 */
-}
 
 /* Step 설명 이미지 */
 .StepImg {
   position: relative;
   width: 0;
-  height: 100px;
+  height: 1800px;
   z-index: 3;
 }
 
@@ -1649,21 +1633,12 @@ justify-content: center;
   transform: translateX(0%);
 }
 
-.StepImg .Orpagewjatjs {
-  position: absolute;
-  width: 20px;
-  height: auto;
-  transform: translateY(0%);
-  transform: translateX(0%);
-
-}
 
 .Step1 { top: 180px; left: -220px; }
 .Step2 { top: 180px; left: 90px; }
 .Step3 { top: 180px; left: 390px; }
 .Step4 { top: 900px; left: 90px; }
 .Step5 { top: 900px; left: 390px; }
-.Orpagewjatjs { top: 1688px; left: 510px;}
 
 /* 오른쪽 주문 이미지 */
 
@@ -1672,7 +1647,7 @@ justify-content: center;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding-right: 8rem; 
+  padding-right: 11rem; 
 }
 
 .jumun {
@@ -1688,6 +1663,28 @@ justify-content: center;
   height: auto;
 }
 
+/* 선 기본 스타일 */
+.borderline1,
+.borderline2 {
+  position: absolute;
+  height: 2px;
+  border-top: 2px dashed #01C38E;
+  z-index: -1; /* StepCircle보다 아래에 깔림 */
+}
+
+/* Step1Circle 기준: Step1Circle보다 아래로, 좌표 고정 */
+.borderline1 {
+  top: calc(23% + 60px); /* Step1Circle의 top: 40% 기준에서 아래 */
+  left: calc(0%); /* Step1Circle의 left와 동일하게 맞춰줌 */
+  width: 780px; /* 원하는 길이 */
+}
+
+/* Step4Circle 기준: Step4Circle의 top 320% 기준에서 아래 */
+.borderline2 {
+  top: calc(307% + 50px); /* Step4Circle의 top 기준에서 아래 */
+  left: calc(50%); /* Step4Circle과 동일한 left 좌표 계산 */
+  width: 600px;
+}
 
 
 
@@ -1758,3 +1755,46 @@ justify-content: center;
 }
 
 
+.Footertainer {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 5rem;
+  padding: 3rem 2rem;
+}
+
+.member1, .member2 {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+/* 이름 + 역할: 가로 정렬 */
+.namerole {
+  display: flex;
+  flex-direction: row; /* ✅ 가로 정렬 */
+  gap: 1rem;
+  align-items: baseline; /* 이름과 역할 높이 자연스럽게 맞춤 */
+  margin-bottom: 0.5rem;
+}
+
+.name {
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.role {
+  font-size: 1rem;
+  color: gray;
+}
+
+.email {
+  font-size: 0.9rem;
+  color: #555;
+}
+
+.FooterLogo {
+  width: 100px;
+  height: auto;
+  align-self: center;
+}
