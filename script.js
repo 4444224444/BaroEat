@@ -408,3 +408,11 @@ const subDesignObserver = new IntersectionObserver((entries) => {
 });
 
 subDesignObserver.observe(subDesignEl);
+
+
+
+
+
+
+
+
