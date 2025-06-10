@@ -1567,7 +1567,7 @@ justify-content: center;
   width: 600px;
   position: relative;
   height: 250px;
-  padding-left: 6rem; 
+  margin-left: 7rem; 
 }
 
 .Step1Circle {
@@ -1575,7 +1575,7 @@ justify-content: center;
   width: 80px;
   height: auto;
   top: 40%;
-  left: 60%;
+  left: 53%;
   transform: translateX(-500%);
 }
 
@@ -1585,7 +1585,7 @@ justify-content: center;
   width: 80px;
   height: auto;
   top: 40%;
-  left: calc(50% + 380px);
+  left: calc(50% + 330px);
   transform: translateX(-500%);
 }
 
@@ -1594,7 +1594,7 @@ justify-content: center;
   width: 80px;
   height: auto;
   top: 40%;
-  left: calc(50% + 680px);
+  left: calc(50% + 640px);
   transform: translateX(-500%);
 }
 
@@ -1603,7 +1603,7 @@ justify-content: center;
   width: 80px;
   height: auto;
   top: 320%;
-  left: calc(50% + 380px);
+  left: calc(50% + 330px);
   transform: translateX(-500%);
 }
 
@@ -1612,7 +1612,7 @@ justify-content: center;
   width: 80px;
   height: auto;
   top: 320%;
-  left: calc(50% + 680px);
+  left: calc(50% + 640px);
   transform: translateX(-500%);
 }
 
@@ -1635,10 +1635,10 @@ justify-content: center;
 }
 
 
-.Step1 { top: 180px; left: -220px; }
-.Step2 { top: 180px; left: 90px; }
+.Step1 { top: 180px; left: -230px; }
+.Step2 { top: 180px; left: 81px; }
 .Step3 { top: 180px; left: 390px; }
-.Step4 { top: 900px; left: 90px; }
+.Step4 { top: 900px; left: 81px; }
 .Step5 { top: 900px; left: 390px; }
 
 /* 오른쪽 주문 이미지 */
@@ -1648,7 +1648,7 @@ justify-content: center;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding-right: 11rem; 
+  margin-right: 11.5rem; 
 }
 
 .jumun {
@@ -1676,7 +1676,7 @@ justify-content: center;
 /* Step1Circle 기준: Step1Circle보다 아래로, 좌표 고정 */
 .borderline1 {
   top: calc(23% + 60px); /* Step1Circle의 top: 40% 기준에서 아래 */
-  left: calc(0%); /* Step1Circle의 left와 동일하게 맞춰줌 */
+  left: calc(-5%); /* Step1Circle의 left와 동일하게 맞춰줌 */
   width: 780px; /* 원하는 길이 */
 }
 
