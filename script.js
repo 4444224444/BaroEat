@@ -1,3 +1,21 @@
+  window.addEventListener('DOMContentLoaded', () => {
+    const header = document.getElementById('mainHeader');
+    const logoImg = document.querySelector('#HeaderLogo img');
+
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 50) {
+        header.classList.add('scrolled');
+        logoImg.src = 'img/Logochange.png'; // 스크롤 시 이미지
+      } else {
+        header.classList.remove('scrolled');
+        logoImg.src = 'img/HeaderLogo.png'; // 원래 이미지
+      }
+    });
+  });
+
+
+
+
 window.addEventListener("DOMContentLoaded", () => {
   const MIN_TRACK_WIDTH = window.innerWidth * 2; // 최소 두 화면 너비 이상으로
   document.querySelectorAll(".scroll-track").forEach(track => {
