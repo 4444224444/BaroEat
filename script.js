@@ -32,6 +32,29 @@ window.addEventListener("DOMContentLoaded", () => {
 
 
 
+  document.addEventListener('DOMContentLoaded', () => {
+    const gif = document.querySelector('.HealthGif');
+    const targetSection = document.getElementById('HealthAnalysisPage');
+
+    const Gifobserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const src = gif.getAttribute('src');
+          gif.setAttribute('src', '');            // src 비우고
+          gif.setAttribute('src', src);            // 다시 설정해서 재생 트리거
+        }
+      });
+    }, {
+      threshold: 0.5  // 50% 보이면 실행
+    });
+
+    Gifobserver.observe(targetSection);
+  });
+
+
+
+
+
 
 const fallBoxes = document.querySelectorAll('.fall-box');
 
