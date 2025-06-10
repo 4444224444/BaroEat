@@ -1762,17 +1762,25 @@ justify-content: center;
 
 .Footertainer {
   display: flex;
-  justify-content: center;
-  text-align: left;
-  gap: 5rem;
-  padding: 3rem 2rem;
+  align-items: center;
+  justify-content: center;     /* 컨테이너 자체는 중앙 */
+  text-align: left;            /* 텍스트 정렬 왼쪽 */
+  gap: 5rem;                   /* 멤버 간 간격 */
+  padding: 5rem;
+}
+
+.name {
+  display: flex;
+  gap: 0rem;
 }
 
 .member1, .member2 {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  color:#F4F8FB;
+  align-items: flex-start;     /* 내부 요소 왼쪽 정렬 */
+  text-align: left;
+  color: #F4F8FB;
+  margin-right: 5rem;
 }
 
 /* 이름 + 역할: 가로 정렬 */
@@ -1790,22 +1798,26 @@ justify-content: center;
   font-weight: bold;
   font-size: 1.2rem;
   margin-bottom: 0rem;
+  font-weight: 400;
 }
 
 .role {
   font-size: 1rem;
   color:#F4F8FB;
   margin-bottom: 0rem;
+  font-weight: 400;
 }
 
 .email {
   font-size: 0.9rem;
   color:#F4F8FB;
   margin-top: 0.4rem;
+    font-weight: 200;
 }
 
 .FooterLogo {
-  width: 100px;
+  width: 300px;
   height: auto;
   align-self: center;
+  margin-left: 20rem;
 }
