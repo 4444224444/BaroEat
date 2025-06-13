@@ -526,7 +526,66 @@ subDesignObserver.observe(subDesignEl);
 
 
 
+document.addEventListener("DOMContentLoaded", () => {
+  const container = document.querySelector('.Container1');
+
+  if (!container) return;
+
+  const children = container.querySelectorAll(
+    '.StepCircle img, .StepImg img, .StepText p, .borderline1, .borderline2'
+  );
+
+  // 초기에 등장 준비 상태로 설정
+  children.forEach(el => el.classList.add('from-left'));
+
+  const sobserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        children.forEach((el, idx) => {
+          el.classList.remove('show');
+          void el.offsetWidth; // 리플로우 유도 → 애니메이션 재실행
+          setTimeout(() => {
+            el.classList.add('show');
+          }, idx * 100);
+        });
+      }
+    });
+  }, { threshold: 0.3 });
+
+  sobserver.observe(container);
+  });
 
 
+
+
+
+
+
+window.addEventListener('scroll', () => {
+  const element = document.querySelector('.image-wrapper');
+  const rect = element.getBoundingClientRect();
+  const triggerPoint = window.innerHeight - 100;
+
+  if (rect.top < triggerPoint && rect.bottom > 0) {
+    element.classList.remove('show');
+    void element.offsetWidth;
+    element.classList.add('show');
+  } else {
+    element.classList.remove('show');
+  }
+});
+
+
+window.addEventListener('scroll', () => {
+  const el = document.querySelector('#Service6');
+  const rect = el.getBoundingClientRect();
+  const triggerPoint = window.innerHeight - 100;
+
+  if (rect.top < triggerPoint && rect.bottom > 0) {
+    el.classList.add('show');
+  } else {
+    el.classList.remove('show'); // 이 줄 빼면 한 번만 나타나고 유지됨
+  }
+});
 
 

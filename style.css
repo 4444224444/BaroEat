@@ -799,7 +799,6 @@ html, body {
   margin-top: 3rem;
   font-weight: 500;
 }
-
 .LogotypeContainer span {
   font-size: 1.4rem;
   color: #1A1E29;
@@ -849,18 +848,32 @@ html, body {
 
 /*타이포 컬러 시작!!!*/
 
-.TypoContainer {
+/* 1. 전체 중앙 정렬 (부모) */
+.Typo {
   display: flex;
+  justify-content: center; /* 중앙 정렬 */
+  align-items: flex-start; /* 세로 정렬 - 위쪽 정렬 */
+  gap: 6rem;                /* 두 컨테이너 간 거리 */
+  width: 100%;
   font-family: 'pretendard';
-  justify-content: center; 
-  gap: 7rem;  
+  padding-top: 4rem;
 }
 
-.TypoTitle{
+/* 2. 컨테이너 내부는 수직 방향, 왼쪽 정렬 */
+.Typo1Container,
+.Typo2Container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* 내부 요소 왼쪽 정렬 */
+  text-align: left;
+}
+
+
+.Typo1Container p {
+  font-size: 1rem;
   color: #8B8B8B;
+  margin-top: 5rem;
   font-weight: 500;
-  margin-top: 10rem;
-    justify-content: flex-start; 
 }
 
 .Font {
@@ -869,81 +882,50 @@ html, body {
   margin-bottom: 2rem;
 }
 
-.Typo1 {
-  justify-content: flex-start; 
-}
 
-.Typo1 p {
-  color: #1A1E29;
+.Typo1Container span {
   font-size: 1.8rem;
-  margin-top: 0rem;
-}
-
-.Typo2 {
-  justify-content: flex-start;
+  max-width: 600px;
+  font-weight: 500;
+  line-height: 1.2;
   color: #1A1E29;
 }
 
-.RegularLabel {
-  display: flex;
-  align-items: center;     /* ✅ 수직 중앙 정렬 */
-  gap: 3rem;              /* ✅ 텍스트 간 간격 */
-  font-size: 1rem;          /* 기본 폰트 사이즈 */
-  font-weight: 400;
-  margin-bottom: 3rem;
-  cursor: default;
-}
-
-.RegularLabel .Regular {
-  font-size: 3rem;          /* ✅ "복잡함은 빼고"만 크게 */
-  font-weight: 400;
-}
-
-.Regular {
-  display: inline-block;
-  white-space: nowrap;
-  transition: opacity 0.3s ease;
-}
-
-.MediumLabel {
-  display: flex;
-  align-items: center;   /* ✅ 세로 중앙 정렬 */
-  gap: 3rem;           /* ✅ 좌우 간격 (선택사항) */
-  font-size: 1rem;       /* 기본 텍스트 크기 */
-  font-weight: 500;
-  margin-bottom: 4rem;
-}
-
-.MediumLabel .Medium {
-  font-size: 3rem;       /* ✅ 강조 텍스트 크게 */
-  font-weight: 500;
-}
-
-.Medium {
-  display: inline-block;
-  white-space: nowrap;
-  transition: opacity 0.3s ease;
-}
-
+.RegularLabel,
+.MediumLabel,
 .SemiBoldLabel {
   display: flex;
-  align-items: center;   /* ✅ 세로 중앙 정렬 */
-  gap: 3rem;           /* ✅ 좌우 간격 */
-  font-size: 1rem;     /* 기본 텍스트 크기 */
-  font-weight: 600;
-  margin-bottom: 4rem;
+  align-items: center;
+  gap: 3rem;
+  font-size: 1rem;
+  margin-bottom: 3.5rem;
+  cursor: default;
+  color: #1A1E29;
 }
 
-.SemiBoldLabel .SemiBold {
-  font-size: 3rem;       /* 강조 텍스트 더 크게 */
-  font-weight: 600;
-}
+.RegularLabel { font-weight: 400; }
+.MediumLabel { font-weight: 500; }
+.SemiBoldLabel { font-weight: 600; }
 
+.Regular,
+.Medium,
 .SemiBold {
   display: inline-block;
   white-space: nowrap;
   transition: opacity 0.3s ease;
+  font-size: 3rem;
 }
+.Regular { font-weight: 400; }
+.Medium { font-weight: 500; }
+.SemiBold { font-weight: 600; }
+
+.Typo2Container {
+  margin-bottom: 0;
+  margin-top: 8rem;
+}
+
+
+/* */
 
 .ColorWrapper {
   display: flex;
@@ -1207,14 +1189,18 @@ justify-content: center;
 #HealthAnalysisPage {
   display: flex;
   justify-content: center;
+  align-items: center; /* 추가 */
+  width: 100%;
 }
 
 .HealthBackgroundBox {
   display: flex;                    /* 가로 정렬 시작 */
-  justify-content: space-between;  /* 양쪽 정렬 */
+  justify-content: center;  /* 양쪽 정렬 */
   align-items: center;             /* 세로 중앙 정렬 */
   gap: 3rem;                        /* 텍스트-이미지 간 간격 */
   background-color: #132D46;
+  gap: 4rem;  
+
   width: 100%;                      /* 전체 너비 차지 */
   max-width: 100vw;  
   border-bottom-left-radius: 60px;
@@ -1222,11 +1208,17 @@ justify-content: center;
   padding: 9rem 0;
 }
 
+.HealthGif {
+  width: 350px;
+  height: auto;
+  margin-right: 11rem;
+}
+
 .Service3Text {
   flex: 1;
   font-family: 'pretendard';
   color: #ffffff;
-  margin-left: 11rem;
+  padding-left: 11rem;
   text-align: left;
 }
 
@@ -1248,19 +1240,6 @@ justify-content: center;
   line-height: 1.6;
 }
 
-.Service3mp4 {
-  flex: 1;
-  display: flex;
-  justify-content: center;
-}
-
-.HealthGif {
-  width: 100%;
-  max-width: 300px; /* 최대 너비 제한 */
-  height: auto;
-  object-fit: contain;
-  margin: 0;
-}
 
 #MainDesign {
   width: 100%;
@@ -1457,7 +1436,7 @@ justify-content: center;
 #Service5 {
   position: relative;
   width: 100%;
-  height: 130rem;
+  height: 129rem;
   overflow: hidden;
 }
 
@@ -1469,15 +1448,17 @@ justify-content: center;
   justify-content: center;
    background-size: contain; 
   align-items: center;
+    margin-bottom: 0rem;
   overflow: visible; /* ✅ 짤림 방지 */
   
 }
 
 .Service5BG {
   max-width: 100%;
-  height: 130rem;
+  height: 129rem;
   object-fit: contain; /* ✅ 비율 유지 + 잘림 방지 */
   display: block;
+  margin-bottom: 0rem;
 }
 
 /* ✅ 콘텐츠 전체를 BG 위에 올리기 */
@@ -1535,10 +1516,15 @@ justify-content: center;
 }
 
 .Service5Text .content2 {
-  font-size: 1rem;
+  font-size: 1.2rem;
   line-height: 1.6;
-  width: 19rem;
+  width: 23rem;
 }
+
+
+
+
+
 
 
 /* 자여기서부터레알죽음의좌표설정시간이다 */
@@ -1549,6 +1535,7 @@ justify-content: center;
   flex-direction: column;
   align-items: center;  /* 세로 쌓인 요소 중앙 정렬 */
   gap: 4rem;
+  margin-top: 25rem;
 }
 
 /* 2. Interaction 박스를 중앙 정렬 */
@@ -1564,19 +1551,37 @@ justify-content: center;
 
 /* 3. 내부 컨테이너 너비 설정 */
 .Container1 {
-  width: 600px;
+  width: 700px;
   position: relative;
   height: 250px;
   margin-left: 7rem; 
+}
+
+.StepText {
+  font-family: 'pretendard';
+  font-size: 0.8rem;
+  font-weight: 400;
 }
 
 .Step1Circle {
   position: absolute;
   width: 80px;
   height: auto;
-  top: 40%;
-  left: 53%;
+  top: 43%;
+  left: -20%;
   transform: translateX(-500%);
+}
+
+.StepText1 {
+  position: absolute;
+  width: 200px;
+  height: auto;
+  top: 60%;
+  left: -28%;
+  transform: translateX(0%);
+  text-align: center;
+  font-family: 'pretendard';
+  font-weight: 600;
 }
 
 /* 나머지: 기준에서 상대 거리만큼 */
@@ -1584,38 +1589,86 @@ justify-content: center;
   position: absolute;
   width: 80px;
   height: auto;
-  top: 40%;
-  left: calc(50% + 330px);
+  top: 43%;
+  left: calc(50% + -85px);
   transform: translateX(-500%);
+}
+
+.StepText2 {
+  position: absolute;
+  width: 200px;
+  height: auto;
+  top: 60%;
+  left: 26%;
+  transform: translateX(0%);
+  text-align: center;
+  font-family: 'pretendard';
+  font-weight: 600;
 }
 
 .Step3Circle {
   position: absolute;
   width: 80px;
   height: auto;
-  top: 40%;
-  left: calc(50% + 640px);
+  top: 43%;
+  left: calc(50% + 225px);
   transform: translateX(-500%);
+}
+
+.StepText3 {
+  position: absolute;
+  width: 200px;
+  height: auto;
+  top: 60%;
+  left: 79%;
+  transform: translateX(-0%);
+  text-align: center;
+  font-family: 'pretendard';
+  font-weight: 600;
 }
 
 .Step4Circle {
   position: absolute;
   width: 80px;
   height: auto;
-  top: 320%;
-  left: calc(50% + 330px);
+  top: 330%;
+  left: calc(50% + -85px);
   transform: translateX(-500%);
+}
+
+.StepText4 {
+  position: absolute;
+  width: 200px;
+  height: auto;
+  top: 348%;
+  left: 26%;
+  transform: translateX(0%);
+  text-align: center;
+  font-family: 'pretendard';
+  font-weight: 600;
 }
 
 .Step5Circle {
   position: absolute;
   width: 80px;
   height: auto;
-  top: 320%;
-  left: calc(50% + 640px);
+  top: 330%;
+  left: calc(50% + 225px);
   transform: translateX(-500%);
 }
 
+
+.StepText5 {
+  position: absolute;
+  width: 200px;
+  height: auto;
+  top: 348%;
+  left: 79%;
+  transform: translateX(0%);
+  text-align: center;
+  font-family: 'pretendard';
+  font-weight: 600;
+}
 
 
 /* Step 설명 이미지 */
@@ -1635,11 +1688,11 @@ justify-content: center;
 }
 
 
-.Step1 { top: 180px; left: -230px; }
-.Step2 { top: 180px; left: 81px; }
-.Step3 { top: 180px; left: 390px; }
-.Step4 { top: 900px; left: 81px; }
-.Step5 { top: 900px; left: 390px; }
+.Step1 { top: 210px; left: -230px; }
+.Step2 { top: 210px; left: 81px; }
+.Step3 { top: 210px; left: 390px; }
+.Step4 { top: 930px; left: 81px; }
+.Step5 { top: 930px; left: 390px; }
 
 /* 오른쪽 주문 이미지 */
 
@@ -1675,28 +1728,94 @@ justify-content: center;
 
 /* Step1Circle 기준: Step1Circle보다 아래로, 좌표 고정 */
 .borderline1 {
-  top: calc(23% + 60px); /* Step1Circle의 top: 40% 기준에서 아래 */
+  top: calc(23% + 66px); /* Step1Circle의 top: 40% 기준에서 아래 */
   left: calc(-5%); /* Step1Circle의 left와 동일하게 맞춰줌 */
   width: 780px; /* 원하는 길이 */
 }
 
 /* Step4Circle 기준: Step4Circle의 top 320% 기준에서 아래 */
 .borderline2 {
-  top: calc(307% + 50px); /* Step4Circle의 top 기준에서 아래 */
-  left: calc(50%); /* Step4Circle과 동일한 left 좌표 계산 */
+  top: calc(307% + 75px); /* Step4Circle의 top 기준에서 아래 */
+  left: calc(40%); /* Step4Circle과 동일한 left 좌표 계산 */
   width: 600px;
+}
+
+
+.from-left {
+  opacity: 0;
+  transform: translateX(-50px);
+  transition: all 0.6s ease-out;
+  
+}
+
+/* 등장 상태 */
+.from-left.show {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.image-wrapper {
+  opacity: 0;
+  mask-image: linear-gradient(to bottom, transparent 0%, black 20%, black 80%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 20%, black 80%, transparent 100%);
+  animation: fadeDown 1.2s ease-out forwards;
+  animation-play-state: paused;
+}
+
+.image-wrapper.show {
+  animation-play-state: running;
+}
+
+@keyframes fadeDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-10px);
+    mask-image: linear-gradient(to bottom, transparent 0%, transparent 0%, black 100%);
+    -webkit-mask-image: linear-gradient(to bottom, transparent 0%, transparent 0%, black 100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+    mask-image: linear-gradient(to bottom, black 0%, black 100%);
+    -webkit-mask-image: linear-gradient(to bottom, black 0%, black 100%);
+  }
 }
 
 
 
 /* 서비스 5 끝!! */
 
+.image-wrapper {
+  display: flex;
+  justify-content: center; /* 수평 중앙 정렬 */
+  align-items: center;     /* 수직 중앙 정렬 (높이 설정 시) */
+  width: 100%;
+  margin-top: 0rem;
+}
+
+.wjatjs5 {
+  max-width: 100%;
+  height: 280px;
+  margin-top: 0rem;
+}
+
 #Service6 {
   position: relative;         /* 배경 위치 기준을 잡기 위해 필요 */
   padding: 5rem 2rem;
   z-index: 0;                 /* 기본 z-index */
   background-color: #F4F8FB;
+    opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
 }
+
+
+
+#Service6.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 
 .Service6Text {
   flex: 1;
